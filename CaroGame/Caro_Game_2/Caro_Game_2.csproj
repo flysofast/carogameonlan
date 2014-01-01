@@ -56,7 +56,6 @@
     <Compile Include="Ban_AI.Designer.cs">
       <DependentUpon>Ban_AI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
