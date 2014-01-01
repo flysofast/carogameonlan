@@ -1,0 +1,29 @@
+﻿1. Giao thức: TCP/IP
+2. Ngôn ngữ : C#
+3. Cơ sở dữ liệu: SQL Server
+4. Game caro
+Ứng dụng(client) ->TCP/IP -> Server( server <--> CSDL) ->TCP/IP-> Ứng dụng(client)
+
+1. Thiết kế giao diện
+- 1 menu: thoát, thay đổi thông tin, đổi mật khẩu, đánh AI, đánh người
+- 1 bàn cờ: 1 khung bàn cờ, 1 khung chức năng( xin thua, xin hòa, tông thời gian chơi, thời gian đi mỗi nước, 
+1 khung chat giữa 2 người chơi)
+- 1 list danh người chơi online
+- 1 ô tìm kiếm người chơi đang online mà chưa đánh
+2. Lập trình game
+- Làm game theo bàn cờ có size(30,30)
+3. Lập trình gửi/nhận tin nhắn
+- Đăng nhập
+- Làm hết phần mềm trừ khung bàn cờ
+5. Thiết kế bài trình bày
+- làm bản word(A4) -> chuyển qua pdf
+- Mô tả đề: mô bài toán caro, mô tả các chức năng trong phần mềm, cách thức xử lí bài toán ( chú ý vẽ nhiều hình ảnh)
+--------------------------------------
+
+1. Đội lập trình: Lạc, Kỷ, Nam(đội trưởng)
+- Game caro: 
+- Phần mềm: 
+1. Đội thiết kế: Nin, Tuấn Anh, Hiệp
+- Giao diện: Ri
+- Word: Hiệp
+
