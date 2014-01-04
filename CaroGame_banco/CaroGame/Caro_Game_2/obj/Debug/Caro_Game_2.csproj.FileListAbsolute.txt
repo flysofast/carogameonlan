@@ -1,0 +1,20 @@
+C:\CaroGameSVN\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe.config
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csprojResolveAssemblyReference.cache
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Ban.resources
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Game.resources
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
+C:\CaroGameSVN\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe
+C:\CaroGameSVN\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.pdb
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.exe
+C:\CaroGameSVN\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.pdb
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe.config
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.exe
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.pdb
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.pdb
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csprojResolveAssemblyReference.cache
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Ban.resources
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Game.resources
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
+F:\Save sol\WinForm\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
