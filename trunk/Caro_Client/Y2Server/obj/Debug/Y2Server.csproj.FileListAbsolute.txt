@@ -1,0 +1,5 @@
+c:\Users\Lac\documents\visual studio 2013\Projects\Server\Y2Server\bin\Debug\Y2Server.exe.config
+c:\Users\Lac\documents\visual studio 2013\Projects\Server\Y2Server\bin\Debug\Y2Server.exe
+c:\Users\Lac\documents\visual studio 2013\Projects\Server\Y2Server\bin\Debug\Y2Server.pdb
+c:\Users\Lac\documents\visual studio 2013\Projects\Server\Y2Server\obj\Debug\Y2Server.exe
+c:\Users\Lac\documents\visual studio 2013\Projects\Server\Y2Server\obj\Debug\Y2Server.pdb
