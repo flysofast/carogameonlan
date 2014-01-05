@@ -36,59 +36,7 @@ namespace Caro_Server
             }
             return localIP;
         }
-        //private void btStart_Click(object sender, EventArgs e)
-        //{
-        //    //try
-        //    //{
-        //    //    IPAddress address = IPAddress.Parse(LocalIPAddress());
-
-        //    //    TcpListener listener = new TcpListener(address, 65535);
-
-        //    //    // 1. listen
-        //    //    listener.Start();
-
-
-        //    //    lbxLog.Items.Add("Server started on " + listener.LocalEndpoint.ToString());
-        //    //    lbxLog.Items.Add("Waiting for a connection...");
-
-        //    //    Socket socket = listener.AcceptSocket();
-        //    //    lbxLog.Items.Add("Connection received from " + socket.RemoteEndPoint);
-
-        //    //    var stream = new NetworkStream(socket);
-        //    //    var reader = new StreamReader(stream);
-        //    //    var writer = new StreamWriter(stream);
-        //    //    writer.AutoFlush = true;
-
-        //    //    while (true)
-        //    //    {
-        //    //        // 2. receive
-        //    //        string str = reader.ReadLine();
-        //    //        if (str.ToUpper() == "EXIT")
-        //    //        {
-        //    //            writer.WriteLine("bye");
-        //    //            break;
-        //    //        }
-        //    //        // 3. send
-        //    //        writer.WriteLine("Hello " + str);
-        //    //    }
-        //    //    // 4. close
-        //    //    stream.Close();
-        //    //    socket.Close();
-        //    //    listener.Stop();
-
-        //    //}
-        //    //catch (Exception ex)
-        //    //{
-        //    //    lbxLog.Items.Add("Error: " + ex);
-        //    //}
-        //    IPAddress address = IPAddress.Parse(GetLocalIPAddress());
-        //    listener = new TcpListener(address, 9999);
-        //    clientListening = new Thread(new ThreadStart(Listen));
-        //    clientListening.IsBackground = true;
-        //    clientListening.Start();
-        //    rtbLog.AppendText("Đang chờ kết nối tới " + listener.LocalEndpoint + "...\r\n");
-        //    btStart.Enabled = false;
-        //}
+        
         TcpListener listener;
         Thread clientListening;
         private void FrmServer_Load(object sender, EventArgs e)
@@ -136,9 +84,18 @@ namespace Caro_Server
 
 
                         rtbLog.AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối\r\n");
+                       
 
                         stream.Close();
                         clientSoc.Close();
+
+                        foreach (var cl in clientList)
+                            if (cl.Value == clientSoc)
+                            {
+                                clientList.Remove(cl.Key);
+                                break;
+                            }
+
                         break;
                     }
 
@@ -180,6 +137,6 @@ namespace Caro_Server
             this.Close();
         }
 
-        
+
     }
 }
