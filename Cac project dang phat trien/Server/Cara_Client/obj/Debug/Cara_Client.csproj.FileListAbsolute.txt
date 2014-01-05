@@ -1,0 +1,9 @@
+D:\Rin\Visual Studio projects\LTM\Cara_Client\bin\Debug\Cara_Client.exe.config
+D:\Rin\Visual Studio projects\LTM\Cara_Client\bin\Debug\Cara_Client.exe
+D:\Rin\Visual Studio projects\LTM\Cara_Client\bin\Debug\Cara_Client.pdb
+D:\Rin\Visual Studio projects\LTM\Cara_Client\obj\Debug\Cara_Client.csprojResolveAssemblyReference.cache
+D:\Rin\Visual Studio projects\LTM\Cara_Client\obj\Debug\Cara_Client.exe
+D:\Rin\Visual Studio projects\LTM\Cara_Client\obj\Debug\Cara_Client.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Cara_Client\bin\Debug\Cara_Client.exe.config
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Cara_Client\obj\Debug\Cara_Client.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Cara_Client\obj\Debug\Cara_Client.pdb
