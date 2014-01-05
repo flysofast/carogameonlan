@@ -1,0 +1,5 @@
+C:\Users\Lac\Documents\Visual Studio 2013\Projects\Caro_Client\Y2Server\bin\Debug\Y2Server.exe.config
+C:\Users\Lac\Documents\Visual Studio 2013\Projects\Caro_Client\Y2Server\obj\Debug\Y2Server.exe
+C:\Users\Lac\Documents\Visual Studio 2013\Projects\Caro_Client\Y2Server\obj\Debug\Y2Server.pdb
+C:\Users\Lac\Documents\Visual Studio 2013\Projects\Caro_Client\Y2Server\bin\Debug\Y2Server.exe
+C:\Users\Lac\Documents\Visual Studio 2013\Projects\Caro_Client\Y2Server\bin\Debug\Y2Server.pdb
