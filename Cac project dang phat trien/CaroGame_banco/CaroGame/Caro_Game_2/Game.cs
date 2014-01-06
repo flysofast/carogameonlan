@@ -20,6 +20,7 @@ namespace Caro_Game_2
         //Ban ban;
         private void Game_Load(object sender, EventArgs e)
         {
+
             //tạo diện tích cho form Game
             Width = 912;
             Height = 610;
@@ -94,21 +95,32 @@ namespace Caro_Game_2
         //Ham tra ve toa do khi click
         public void NhanToado(int x, int y)
         {
-            textBox1.Text = x.ToString() + " " + y.ToString();
+            txtTimkiem.Text = x.ToString() + " " + y.ToString();
+            pb.Xoasukienclick();
+            TimeStart(1);
+            lblTimeright.Text = "30s";
+        }
+
+        //hàm trả về kết quả thắng
+        public void Xylythang(int xo) //Neu O thang thi xo=1, X thang thi xo=2
+        {
+            rtbWriteChat.Text = xo.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] arrtd = textBox1.Text.Split(' ');
+            string[] arrtd = txtTimkiem.Text.Split(' ');
             int x = int.Parse(arrtd[0]);
             int y = int.Parse(arrtd[1]);
-            pb.Danh_X(x, y);
+            pb.Danh_O(x, y);
+            pb.Themsukienclick();
+            TimeStart(2);
+            lblTimeleft.Text = "30s";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listView1.Items.Add(textBox1.Text, "12");
-            button1.Click -= button1_Click;
+            listDsnguoidung.Items.Add(txtTimkiem.Text, "12");
             pb.Xoasukienclick();
             
         }
@@ -116,6 +128,86 @@ namespace Caro_Game_2
         private void button4_Click(object sender, EventArgs e)
         {
             pb.Themsukienclick();
+        }
+
+        private void btnFontchat_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            rtbWriteChat.Font = fontDialog1.Font;
+            rtbWriteChat.Focus();
+        }
+
+        private void btnColorchat_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            rtbWriteChat.ForeColor = colorDialog1.Color;
+            rtbWriteChat.Focus();
+        }
+
+        //hien thi tin nhan
+        public void Hienthitindi(string ten, string noidung)
+        {
+            string s = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\fnil\\fcharset0 Times New Roman;}}{\\colortbl ;\\red125\\green0\\blue255;}\\viewkind4\\uc1\\pard\\cf1\\b\\f0\\fs20" + ten + "  : }";
+            rtbTinnhan.SelectedRtf= s;
+            rtbTinnhan.Select(rtbTinnhan.Text.Length, 1);
+            rtbTinnhan.SelectedRtf = noidung;
+            
+            rtbTinnhan.ScrollToCaret();
+        }
+        public void Hienthitinden(string ten, string noidung)
+        {
+            string s = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\fnil\\fcharset0 Times New Roman;}}{\\colortbl ;\\red0\\green0\\blue255;}\\viewkind4\\uc1\\pard\\cf1\\b\\f0\\fs20" + ten + "  : }";
+            rtbTinnhan.SelectedRtf = s;
+            rtbTinnhan.Select(rtbTinnhan.Text.Length, 1);
+            rtbTinnhan.SelectedRtf = noidung;
+
+            rtbTinnhan.ScrollToCaret();
+        }
+        //-------------------
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Hienthitindi("me", rtbWriteChat.Rtf);
+            Hienthitinden("we", rtbWriteChat.Rtf);
+        }
+
+        //Đếm ngược thời gian chơi:
+        int sogiay, aidanh;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (aidanh == 1)
+            {
+                if (sogiay >= 0)
+                {
+                    lblTimeleft.Text = Math.Abs(sogiay) + "s";
+                    sogiay--;
+                }
+                else
+                {
+                    rtbTinnhan.Text = "het gio";
+                    //thực hiện gữi tin cho sv đánh random
+                    timer1.Enabled = false;
+                }
+            }
+            else
+            {
+                lblTimeright.Text = Math.Abs(sogiay) + "s";
+                sogiay--;
+            }
+        }
+
+        public void TimeStart(int b_aidanh)
+        {
+            aidanh = b_aidanh;
+            sogiay = 30;
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+        }
+        //-----------------
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TimeStart(1);
+            TimeStart(2);
         }
     }
 }

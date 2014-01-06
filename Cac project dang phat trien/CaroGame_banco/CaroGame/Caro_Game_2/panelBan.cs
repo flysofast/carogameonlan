@@ -57,6 +57,7 @@ namespace Caro_Game_2
         {
             ban.Ve_O(x, y);
         }
+
         public void Tratoado(int x, int y)
         {
             Game ttd = Parent as Game;
@@ -66,6 +67,12 @@ namespace Caro_Game_2
         {
             Game game = Parent as Game;
             game.TaoBan();
+        }
+
+        public void Xulythang(int xo) //Neu O thang thi xo=1, X thang thi xo=2
+        {
+            Game xlt = Parent as Game;
+            xlt.Xylythang(xo);
         }
     }
 }
