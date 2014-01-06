@@ -1,0 +1,5 @@
+D:\Rin\Visual Studio projects\LTM\ClientProj\bin\Debug\ClientProj.exe.config
+D:\Rin\Visual Studio projects\LTM\ClientProj\bin\Debug\ClientProj.exe
+D:\Rin\Visual Studio projects\LTM\ClientProj\bin\Debug\ClientProj.pdb
+D:\Rin\Visual Studio projects\LTM\ClientProj\obj\Debug\ClientProj.exe
+D:\Rin\Visual Studio projects\LTM\ClientProj\obj\Debug\ClientProj.pdb

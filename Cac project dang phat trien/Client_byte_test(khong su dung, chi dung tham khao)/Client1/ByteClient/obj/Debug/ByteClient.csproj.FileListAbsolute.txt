@@ -1,0 +1,5 @@
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_test\Client1\ByteClient\bin\Debug\ByteClient.exe.config
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_test\Client1\ByteClient\bin\Debug\ByteClient.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_test\Client1\ByteClient\bin\Debug\ByteClient.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_test\Client1\ByteClient\obj\Debug\ByteClient.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_test\Client1\ByteClient\obj\Debug\ByteClient.pdb

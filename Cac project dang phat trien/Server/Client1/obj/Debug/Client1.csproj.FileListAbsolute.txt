@@ -1,0 +1,12 @@
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Client1\bin\Debug\Client1.exe.config
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Client1\bin\Debug\Client1.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Client1\bin\Debug\Client1.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Client1\obj\Debug\Client1.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Client1\obj\Debug\Client1.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\_Server\Client1\bin\Debug\Client1.exe.config
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\_Server\Client1\obj\Debug\Client1.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\_Server\Client1\obj\Debug\Client1.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\_Server\Client1\bin\Debug\Client1.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\_Server\Client1\bin\Debug\Client1.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\_Server\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
