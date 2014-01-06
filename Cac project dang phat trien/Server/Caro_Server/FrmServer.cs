@@ -46,7 +46,7 @@ namespace Caro_Server
             clientListening = new Thread(new ThreadStart(Listen));
             clientListening.IsBackground = true;
             clientListening.Start();
-            AppendText(listener.LocalEndpoint + " đang chờ kết nối...\r\n", Color.Green);
+            AppendText(listener.LocalEndpoint + " đang chờ kết nối...", Color.Green);
         }
         static Dictionary<string, Socket> clientList = new Dictionary<string, Socket>();
         static Dictionary<Socket, NetworkStream> streamList = new Dictionary<Socket, NetworkStream>();
@@ -61,14 +61,14 @@ namespace Caro_Server
                     Thread clientCommunicating = new Thread(clientProcess);
                     clientCommunicating.IsBackground = true;
                     clientCommunicating.Start(clientSoc);
-                    AppendText("Đã nhận kết nối từ " + clientSoc.RemoteEndPoint + "\r\n", Color.Green);
+                    AppendText("Đã nhận kết nối từ " + clientSoc.RemoteEndPoint , Color.Green);
                 }
             }
             catch (Exception ex)
             {
                 
-                AppendText("Listen:\r\n",Color.Red);
-                AppendText(ex.Message + "\r\n", Color.Red);
+                AppendText("Listen:",Color.Red);
+                AppendText(ex.Message , Color.Red);
             }
         }
 
@@ -79,7 +79,6 @@ namespace Caro_Server
         /// <param name="soc">socket của client đang được kết nối</param>
         void clientProcess(object soc)
         {
-
             Socket clientSoc = (Socket)soc;
             var stream = new NetworkStream(clientSoc);
             var reader = new StreamReader(stream);
@@ -96,7 +95,7 @@ namespace Caro_Server
 
                     // Nhận dữ liệu từ client
                     string str = reader.ReadLine();
-                    AppendText(string.Format("{0}: {1}\r\n", clientSoc.RemoteEndPoint, str), Color.Black);
+                    AppendText(string.Format("{0}: {1}", clientSoc.RemoteEndPoint, str), Color.Black);
 
                     //Nếu chưa đăng kí alias
                     if (!registered)
@@ -111,7 +110,7 @@ namespace Caro_Server
                             //Nếu alias này đã có người đăng kí trước
                             if (clientList.ContainsKey(alias))
                             {
-                                AppendText(string.Format("Từ chối yêu cầu thêm alias \"{0}\" từ {1} vì đã tồn tại\r\n"
+                                AppendText(string.Format("Từ chối yêu cầu thêm alias \"{0}\" từ {1} vì đã tồn tại"
                                     , alias, clientSoc.RemoteEndPoint), Color.Green);
 
                                 //Gửi thông báo trùng alias
@@ -123,7 +122,7 @@ namespace Caro_Server
                             clientList.Add(alias, clientSoc);
 
                             AppendText(clientSoc.RemoteEndPoint + " đã được thêm vào danh sách với alias \""
-                                + alias + "\"\r\n", Color.Green);
+                                + alias + "\"", Color.Green);
 
                             UpdateClientsListDisplay();
                             writer.WriteLine("/:AD:/");
@@ -139,7 +138,7 @@ namespace Caro_Server
                         //KHÔNG GỬI TRẢ XÁC NHẬN VỀ CLIENT VÌ CLIENT ĐÃ ĐÓNG KẾT NỐI
                         if (str.ToUpper() == "/:DC:/")
                         {
-                            AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối\r\n", Color.Green);
+                            AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối", Color.Green);
 
 
                             stream.Close();
@@ -173,12 +172,12 @@ namespace Caro_Server
 
                                 wr.WriteLine(message);
                                 writer.WriteLine("/:SC:/");
-                                AppendText(string.Format("Đã gửi tin nhắn tới alias \"" + alias + "\"\r\n"), Color.Green);
+                                AppendText(string.Format("Đã gửi tin nhắn tới alias \"" + alias + "\""), Color.Green);
                             }
                             else
                             {
                                 writer.WriteLine("/:NF:/");
-                                AppendText(string.Format("Không tìm thấy alias \"" + alias + "\". Tin nhắn chưa được gửi đi.\r\n"), Color.Green);
+                                AppendText(string.Format("Không tìm thấy alias \"" + alias + "\". Tin nhắn chưa được gửi đi."), Color.Green);
                             }
                           
                             
@@ -188,21 +187,38 @@ namespace Caro_Server
                     }
 
                     //Client kết nối tới chưa đăng kí alias gửi tin chùa hoặc không theo đúng cấu trúc
-                    writer.WriteLine("Da nhan duoc tin nhan nhung khong thuc hien thao tac gi!\r\nKiem tra lai cau truc tin nhan gui di!");
-                    AppendText("Không thực hiện hành động gì\r\n",Color.Green);
+                    writer.WriteLine("Da nhan duoc lenh nhung khong thuc hien thao tac gi. Kiem tra lai cau truc tin nhan gui di!");
+                    AppendText("Không thực hiện hành động gì",Color.Green);
                 }
 
             }
             catch (Exception ex)
             {
-                AppendText("clientProcess:\r\n",Color.Red);
-                AppendText(ex.Message + "\r\n", Color.Red);
+                AppendText("clientProcess:",Color.Red);
+                AppendText(ex.Message, Color.Red);
 
                 //Có lỗi xảy ra, gửi thông báo cho client
                 //writer.WriteLine("/:ER:/");
 
             }
 
+        }
+
+        void BroadcastClientList()
+        {
+            string cls ="";
+            foreach (var client in clientList)
+            {
+                cls += client.Key + ";";
+            }
+            foreach (var client in clientList)
+            {
+                Socket cs = client.Value;
+                var st = new NetworkStream(cs);
+                var wr = new StreamWriter(st);
+                wr.AutoFlush = true;
+                wr.WriteLine(string.Format("/:CL:/{0}",cls));
+            }
         }
         /// <summary>
         /// Lấy nội dung của một tag
@@ -226,7 +242,7 @@ namespace Caro_Server
             {
                 rtbClients.AppendText(client.Key + ": " + client.Value.RemoteEndPoint + "\r\n");
             }
-
+            BroadcastClientList();
         }
 
         public void AppendText(string text, Color color)
@@ -235,8 +251,9 @@ namespace Caro_Server
             rtbLog.SelectionLength = 0;
 
             rtbLog.SelectionColor = color;
-            rtbLog.AppendText(text);
+            rtbLog.AppendText(text+"\r\n");
             rtbLog.SelectionColor = rtbLog.ForeColor;
+            rtbLog.ScrollToCaret();
         }
 
         private void button1_Click(object sender, EventArgs e)
