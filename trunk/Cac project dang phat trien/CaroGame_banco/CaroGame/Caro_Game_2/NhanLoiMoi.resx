@@ -117,31 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnFontchat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAdxJREFUKFONjltLG0EYhvODbG0RpSpUsUUwF16KV4JaEUUsrRJBUVGiXigeaD1F
-        VIxNpZVKqSesrafcxKBNG0QDWdkcNqdNYiTpbmZ2d8Z+qauJhYIfLzMD8zzvjGbwI5+Z/vd890JINxNs
-        ehuoGfZXDvjKe7jSDu6pzgvJf+1JCcaDK8j8HjV8JxNbyui6PPhZ0i/jziXUZhRfzQqN00LdeALyuO74
-        zgt6U6h9PtQ8mequ6PdpO73Ff1tvk11j0cytmK/+P5RSmVAsUxETSG5ZrcbwYUe9zJiYRLvHTr1+QVEo
-        lqiISEJUNvZ/pYTFLxaVupkoon1TfO7zNdYTRxLR3Iwq/POlkEA6xrnC8sMCrcnJxqA7LiixhBK5lFQh
-        80vumKwb87xosQOd82zSwUSAVvtvX5gwfb2mGV5qGnCVVOxbbWGgs570nTj4i7gSvpSDUYkL4+Wtnynh
-        jXET6BMO1fe6K6u/dfXuvGzfBPpB/tCpMwp0IIo5HruDaHHNpgo2FtXrfQ2tR/6LJMLkd5IAnVf6zmqP
-        AO0NY1cAMf5kWtBWrT8qMgABEZLk+vCwcARW6HYF0bkPOTxiWlAIdTBu+5nLamfNP9hty/mqmfm061za
-        vpO0ANt9U1b7B5uAzVJgshwaAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>248, 17</value>
-  </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>369, 17</value>
-  </metadata>
 </root>

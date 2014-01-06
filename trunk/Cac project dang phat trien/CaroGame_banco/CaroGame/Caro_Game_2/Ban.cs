@@ -105,34 +105,36 @@ namespace Caro_Game_2
             {
                 panelBan gtd = Parent as panelBan;
                 gtd.Tratoado(x, y);
-                if (flag)
-                {                   
-                    Data[x, y] = 1;// 2 tương đương với chứa O
-                    Ve_O(x, y);// vẽ hình O
-                    flag = false;
-                }
-                else
-                {
+                //if (flag)
+                //{                   
+                //    Data[x, y] = 1;// 2 tương đương với chứa O
+                //    Ve_O(x, y);// vẽ hình O
+                //    flag = false;
+                //}
+                //else
+                //{
                     Data[x, y] = 2; // 1 tương đương với chứa X
                     Ve_X(x, y);// vẽ hình X
                     flag = true;
-                }
+                //}
                 //try
                 //{
                     //-- Kiểm tra thắng thua
                     if (KiemTra(x, y) == 1)// kiểm tra xem với O vừa đánh có tạo thành 1 dãy 5 O ko
                     {
+                        panelBan game = Parent as panelBan;
+                        game.Xulythang(1);
                         if (MessageBox.Show("O thang!! Ban co muon tiep tuc?", "Victory", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         {
-                            panelBan game = Parent as panelBan;
                             game.TaoBan();
                         }
                     }
                     if (KiemTra(x, y) == 2)// kiểm tra xem với X vừa đánh có tạo thành 1 dãy 5 X ko
                     {
+                        panelBan game = Parent as panelBan;
+                        game.Xulythang(2);
                         if (MessageBox.Show("X thang!! Ban co muon tiep tuc?", "Victory", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         {
-                            panelBan game = Parent as panelBan;
                             game.TaoBan();
                         }
                     }
