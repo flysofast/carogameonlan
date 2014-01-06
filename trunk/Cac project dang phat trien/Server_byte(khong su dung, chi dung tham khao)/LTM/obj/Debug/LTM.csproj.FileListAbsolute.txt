@@ -1,0 +1,6 @@
+D:\Rin\Visual Studio projects\LTM\LTM\bin\Debug\LTM.exe.config
+D:\Rin\Visual Studio projects\LTM\LTM\obj\Debug\LTM.csprojResolveAssemblyReference.cache
+D:\Rin\Visual Studio projects\LTM\LTM\bin\Debug\LTM.exe
+D:\Rin\Visual Studio projects\LTM\LTM\bin\Debug\LTM.pdb
+D:\Rin\Visual Studio projects\LTM\LTM\obj\Debug\LTM.exe
+D:\Rin\Visual Studio projects\LTM\LTM\obj\Debug\LTM.pdb

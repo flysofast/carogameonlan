@@ -1,0 +1,6 @@
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server2\Client1 - Copy\bin\Debug\Client1.exe.config
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server2\Client1 - Copy\bin\Debug\Client1.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server2\Client1 - Copy\bin\Debug\Client1.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server2\Client1 - Copy\obj\Debug\Client12.csprojResolveAssemblyReference.cache
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server2\Client1 - Copy\obj\Debug\Client1.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Server2\Client1 - Copy\obj\Debug\Client1.pdb
