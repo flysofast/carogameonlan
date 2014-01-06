@@ -36,7 +36,7 @@ namespace Caro_Server
             }
             return localIP;
         }
-        
+
         TcpListener listener;
         Thread clientListening;
         private void FrmServer_Load(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Caro_Server
             clientListening = new Thread(new ThreadStart(Listen));
             clientListening.IsBackground = true;
             clientListening.Start();
-            rtbLog.AppendText(listener.LocalEndpoint + " đang chờ kết nối...\r\n");
+            AppendText(listener.LocalEndpoint + " đang chờ kết nối...\r\n", Color.Green);
         }
         static Dictionary<string, Socket> clientList = new Dictionary<string, Socket>();
         void Listen()
@@ -58,9 +58,15 @@ namespace Caro_Server
                 Thread clientCommunicating = new Thread(clientProcess);
                 clientCommunicating.IsBackground = true;
                 clientCommunicating.Start(clientSoc);
-                rtbLog.AppendText("Đã nhận kết nối từ " + clientSoc.RemoteEndPoint + "\r\n");
+                AppendText("Đã nhận kết nối từ " + clientSoc.RemoteEndPoint + "\r\n", Color.Green);
             }
         }
+
+
+        /// <summary>
+        /// Hàm xử lý gửi nhận tin với client đang được kết nối
+        /// </summary>
+        /// <param name="soc">socket của client đang được kết nối</param>
         void clientProcess(object soc)
         {
 
@@ -70,65 +76,144 @@ namespace Caro_Server
             var writer = new StreamWriter(stream);
             writer.AutoFlush = true;
 
+            //Đã đăng kí alias hay chưa
+            bool registered = false;
             try
             {
                 while (true)
                 {
 
+
                     // Nhận dữ liệu từ client
                     string str = reader.ReadLine();
-                    rtbLog.AppendText(string.Format("{0}: {1}\r\n", clientSoc.RemoteEndPoint, str));
-                    if (str.ToUpper() == "/:EX:/")
+                    AppendText(string.Format("{0}: {1}\r\n", clientSoc.RemoteEndPoint, str), Color.Black);
+
+                    //Nếu chưa đăng kí alias
+                    if (!registered)
                     {
-                        writer.WriteLine("/:EX:/");
+                        //Cấu trúc yêu cầu đăng kí alias: /:al:/<alias> => đăng kí alias là <alias>
+                        //Xác nhận thêm thành công (added): /:AD:/ => đã thêm alias vào danh sách client
+                        //Xác nhận trùng alias (conflicted): /:CF:/ => chưa thêm vào danh sách, nhập lại alias khác
+                        if (str.Length >= 6 && str.ToUpper().Substring(0, 6) == "/:AL:/")
+                        {
+                            string alias = str.Substring(6);
 
-
-                        rtbLog.AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối\r\n");
-                       
-
-                        stream.Close();
-                        clientSoc.Close();
-
-                        foreach (var cl in clientList)
-                            if (cl.Value == clientSoc)
+                            //Nếu alias này đã có người đăng kí trước
+                            if (clientList.ContainsKey(alias))
                             {
-                                clientList.Remove(cl.Key);
-                                break;
+                                AppendText(string.Format("Từ chối yêu cầu thêm alias \"{0}\" từ {1} vì đã tồn tại\r\n"
+                                    , alias, clientSoc.RemoteEndPoint), Color.Green);
+
+                                //Gửi thông báo trùng alias
+                                writer.WriteLine("/:CF:/");
+
+                                continue;
                             }
 
-                        break;
-                    }
+                            clientList.Add(alias, clientSoc);
 
-                    if (str.Length >= 6 && str.ToUpper().Substring(0, 6) == "/:AL:/")
-                    {
-                        string alias = str.Substring(6);
-                        if (clientList.ContainsKey(alias))
-                        {
-                            rtbLog.AppendText(string.Format("Từ chối yêu cầu thêm alias \"{0}\" từ {1} vì đã tồn tại\r\n"
-                                , alias, clientSoc.RemoteEndPoint));
-                            writer.WriteLine("/:TR:/");
+                            AppendText(clientSoc.RemoteEndPoint + " đã được thêm vào danh sách với alias \""
+                                + alias + "\"\r\n", Color.Green);
+
+                            UpdateClientsListDisplay();
+                            writer.WriteLine("/:AD:/");
+                            registered = true;
                             continue;
                         }
-
-                        clientList.Add(alias, clientSoc);
-
-                        rtbLog.AppendText(clientSoc.RemoteEndPoint + " đã được thêm vào danh sách với alias \""
-                            + alias + "\"\r\n");
-                        rtbClients.AppendText(alias + " : " + clientSoc.RemoteEndPoint + "\r\n");
-                        writer.WriteLine("/:OK:/");
                     }
 
-                    writer.WriteLine("RECEIVED!");
+                    //Nếu đã đăng kí alias
+                    else
+                    {
+                        //Cấu trúc yêu cầu đóng kết nối (disconnect): /:dc:/ => yêu cầu ngắt kết nối
+                        //KHÔNG GỬI TRẢ XÁC NHẬN VỀ CLIENT VÌ CLIENT ĐÃ ĐÓNG KẾT NỐI
+                        if (str.ToUpper() == "/:DC:/")
+                        {
+                            AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối\r\n", Color.Green);
+
+
+                            stream.Close();
+                            clientSoc.Close();
+
+                            clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
+
+                            UpdateClientsListDisplay();
+                            break;
+                        }
+
+
+                        //Cấu trúc: /:ms:/<recipient><alias người nhận></recipient><content><nội dung></content> 
+                        //  => gửi tin nhắn có nội dung <nội dung> tới <alias người nhận>
+                        //Nội dung tin nhắn có thể là tin nhắn chat, các lệnh đánh, xin thua,... được quy định ở client
+                        //Xác nhận thành công (succeed): /:SC:/
+                        //Xác nhận không tìm thấy alias này trong danh sách client đang kết nối (not found): /:NF:/
+                        if (str.Length >= 6 && str.ToUpper().Substring(0, 6) == "/:MS:/")
+                        {
+                            string clientString = str.Substring(6);
+                            string alias = clientString.Substring(clientString.IndexOf("<recipient>") + 1, clientString.IndexOf("</recipient>") - 1);
+                            string message = clientString.Substring(clientString.IndexOf("<content>") + 1, clientString.IndexOf("</content>") - 1);
+
+
+                            if (clientList.Any(p => p.Key == alias))
+                            {
+                                Socket cs = clientList.Single(p => p.Key == alias).Value;
+                                var st = new NetworkStream(clientSoc);
+                                var wr = new StreamWriter(stream);
+                                wr.AutoFlush = true;
+                                wr.WriteLine(message);
+                                writer.WriteLine("/:SC:/");
+                                AppendText(string.Format("Đã gửi tin nhắn tới alias \"" + alias + "\""), Color.Green);
+                            }
+                            else
+                            {
+                                writer.WriteLine("/:NF:/");
+                                AppendText(string.Format("Không tìm thấy alias \"" + alias + "\". Tin nhắn chưa được gửi đi."), Color.Green);
+                            }
+                          
+                            
+                            break;
+
+                        }
+                    }
+
+                    //Client kết nối tới chưa đăng kí alias gửi tin chùa hoặc không theo đúng cấu trúc
+                    writer.WriteLine("Da nhan duoc tin nhan nhung khong thuc hien thao tac gi! Kiem tra lai cau truc tin nhan gui di!");
+                    AppendText("Không thực hiện hành động gì\r\n",Color.Green);
                 }
 
             }
             catch (Exception ex)
             {
-                rtbLog.AppendText("clientProcess:\r\n");
-                rtbLog.AppendText(ex.Message + "\r\n");
+                AppendText("clientProcess:\r\n",Color.Red);
+                AppendText(ex.Message + "\r\n", Color.Red);
+
+                //Có lỗi xảy ra, gửi thông báo cho client
+                writer.WriteLine("/:ER:/");
 
             }
 
+        }
+        /// <summary>
+        /// Hàm cập nhật lại danh sách client được hiển thị trên form
+        /// </summary>
+        void UpdateClientsListDisplay()
+        {
+            rtbClients.Clear();
+            foreach (var client in clientList)
+            {
+                rtbClients.AppendText(client.Key + " : " + client.Value.RemoteEndPoint + "\r\n");
+            }
+
+        }
+
+        public void AppendText(string text, Color color)
+        {
+            rtbLog.SelectionStart = rtbLog.TextLength;
+            rtbLog.SelectionLength = 0;
+
+            rtbLog.SelectionColor = color;
+            rtbLog.AppendText(text);
+            rtbLog.SelectionColor = rtbLog.ForeColor;
         }
 
         private void button1_Click(object sender, EventArgs e)
