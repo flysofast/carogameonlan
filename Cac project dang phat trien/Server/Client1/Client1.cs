@@ -11,7 +11,21 @@ public class Y2Client
     private const int PORT_NUMBER = 9999;
 
     static ASCIIEncoding encoding = new ASCIIEncoding();
-
+     public static string GetLocalIPAddress()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    localIP = ip.ToString();
+                    break;
+                }
+            }
+            return localIP;
+        }
     public static void Main()
     {
 
@@ -20,7 +34,7 @@ public class Y2Client
             TcpClient client = new TcpClient();
 
             // 1. connect
-            client.Connect("192.168.0.102", PORT_NUMBER);
+            client.Connect(GetLocalIPAddress(), PORT_NUMBER);
             Stream stream = client.GetStream();
 
             Console.WriteLine("Connected to Y2Server.");
