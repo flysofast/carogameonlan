@@ -179,10 +179,7 @@ namespace Caro_Server
                                 writer.WriteLine("/:NF:/");
                                 AppendText(string.Format("Không tìm thấy alias \"" + alias + "\". Tin nhắn chưa được gửi đi."), Color.Green);
                             }
-                          
-                            
                             continue;
-
                         }
                     }
 
@@ -229,7 +226,7 @@ namespace Caro_Server
         string GetElement(string s,string tagname)
         {
             int start = s.IndexOf(tagname) + tagname.Length +1;
-            int length = s.IndexOf("/" + tagname) - start-1;
+            int length = s.LastIndexOf("/" + tagname) - start-1;
             return s.Substring(start, length);
         }
         /// <summary>
