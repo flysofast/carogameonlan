@@ -368,6 +368,7 @@ namespace Caro_Game_2
         //Xử lý việc đóng form
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Caro_Client.NgatKetNoi();
             Application.Exit();
         }
 
