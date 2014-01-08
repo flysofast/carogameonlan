@@ -12,7 +12,6 @@ namespace Caro_Game_2
 {
     public partial class MoiChoi : Form
     {
-        public string tendoithu;
         public MoiChoi()
         {
             InitializeComponent();
@@ -22,6 +21,13 @@ namespace Caro_Game_2
         {
             AcceptButton = btnGuiloimoi;
             lblTendoithu.Text = "Mời đối thủ: " + tendoithu;
+        }
+
+        public string tendoithu;
+        public string tenminh;
+        private void btnGuiloimoi_Click(object sender, EventArgs e)
+        {
+            Caro_Client.GuiLoiMoi(tendoithu,tenminh,rtbNDLoimoi.Text);
         }
     }
 }

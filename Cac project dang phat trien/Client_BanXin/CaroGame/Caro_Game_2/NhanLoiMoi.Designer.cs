@@ -42,7 +42,7 @@
             this.btnDongy.Name = "btnDongy";
             this.btnDongy.Size = new System.Drawing.Size(75, 30);
             this.btnDongy.TabIndex = 0;
-            this.btnDongy.Text = "Đồng Ý";
+            this.btnDongy.Text = "Đồng ý";
             this.btnDongy.UseVisualStyleBackColor = true;
             this.btnDongy.Click += new System.EventHandler(this.btnDongy_Click);
             // 
