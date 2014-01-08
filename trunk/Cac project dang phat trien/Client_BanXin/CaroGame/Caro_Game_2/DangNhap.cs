@@ -48,7 +48,15 @@ namespace Caro_Game_2
                 lblThongbao.Text = "Bạn nhập thiếu thông tin!!!";
                 return;
             }
+            if (txtTendangnhap.Text[0] >= 48 && txtTendangnhap.Text[0] <= 57)
+            {
+                lblThongbao.Text = "Tên đăng nhập có ký tự số đầu!!";
+                return;
+            }
             string tendn = txtTendangnhap.Text;
+
+            Caro_Client.KetNoiServer(txtIpsv.Text, 9999);
+            Caro_Client.GuiAlias(tendn);
             Game fg = new Game();
             fg.ten = tendn;
             fg.Show();

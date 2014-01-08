@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -22,8 +24,10 @@ namespace Caro_Game_2
         public Game()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
+        Thread thrNhan;
         private void Game_Load(object sender, EventArgs e)
         {
             //Hiển thị
@@ -47,6 +51,93 @@ namespace Caro_Game_2
 
             //timer2.Interval = 100;
             //timer2.Enabled = true;
+            thrNhan = new Thread(NhanDuLieu);
+            thrNhan.IsBackground = true;
+            thrNhan.Start();
+        }
+
+        //public delegate void SetBien();
+        //public SetBien setDangChoi;
+
+       public bool dangchoi = false;
+        void NhanDuLieu()
+        {
+            var reader = new StreamReader(Caro_Client.stream);
+            try
+            {
+                while (true)
+                {
+                    
+                    string str = reader.ReadLine();
+
+                    if (str.Substring(0, 6) == "/:TD:/")
+                    {
+                        string[] td = str.Substring(6).Split(',');
+                        int x = int.Parse(td[0]);
+                        int y = int.Parse(td[1]);
+                        Danhco(x, y);
+                        continue;
+                    }
+
+                    if (str.Substring(0, 6) == "/:TN:/")
+                    {
+                        string tn = str.Substring(6);
+                        //Hienthitinden("tranhuulac",tn);
+                        txtTimkiem.Text = tn;
+                        continue;
+                    }
+                    if (str.Substring(0, 6) == "/:LM:/")
+                    {
+                        string[] td = str.Substring(6).Split(',');
+                        string nguoimoi = td[0].ToString();
+                        string noidung = td[1].ToString();
+
+                        if (dangchoi)
+                        {
+                            Caro_Client.TuChoi(nguoimoi, "DangChoi");
+                            continue;
+                        }
+
+                        Hienthiloimoi(nguoimoi, noidung);
+                        continue;
+                    }
+
+                    if (str.Substring(0, 6) == "/:DY:/")
+                    {
+                        doithu = str.Substring(6);
+                        dangchoi = true;
+                        lblTendoithu.Text = doithu;
+                        continue;
+                    }
+
+                    if (str.Substring(0, 6) == "/:TC:/")
+                    {
+                        if (str.Substring(6) == "TuChoi")
+                            MessageBox.Show("Đối thủ từ chối lời mời");
+                        if (str.Substring(6) == "DangChoi")
+                            MessageBox.Show("Đối thủ đang bận chơi");
+
+                        continue;
+                    }
+
+                    if (str.Substring(0, 6) == "/:XH:/")
+                    {
+                        //Xử lý xin hòa
+                        continue;
+                    }
+
+                    if (str.Substring(0, 6) == "/:CL:/")
+                    {
+                        Hienthidsnguoichoi(str.Substring(6));
+                        continue;
+                    }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         /// <summary>
         /// Tạo bàn mới
@@ -103,6 +194,7 @@ namespace Caro_Game_2
         //Ham tra ve toa do khi click
         public void NhanToado(int x, int y)
         {
+            Caro_Client.GuiToaDo(x, y+1, doithu);
             //txtTimkiem.Text = x.ToString() + " " + y.ToString();
             pb.Xoasukienclick();
             TimeStart(2);
@@ -135,7 +227,6 @@ namespace Caro_Game_2
                 Thietlaptyso(tysotrai, tysophai + 1);
             else
                 Thietlaptyso(tysotrai + 1, tysophai);
-            timer1.Enabled = false;
             lblTimeleft.Text = lblTimeright.Text = "30s";
         }
 
@@ -160,13 +251,22 @@ namespace Caro_Game_2
             }
         }
 
+        public void setDoiThu(string dt)
+        {
+            doithu = dt;
+            dangchoi = true;
+            lblTendoithu.Text = doithu;
+        }
         //hàm hiển thị lời mời
         public void Hienthiloimoi(string tendthu, string noidung)
         {
             NhanLoiMoi nlm = new NhanLoiMoi();
             nlm.tendthu = tendthu;
             nlm.noidunglm = noidung;
+            nlm.tenminh = ten;
+            nlm.setVaoChoi = new NhanLoiMoi.dlgsetVaoChoi(setDoiThu);
             nlm.ShowDialog();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -180,14 +280,12 @@ namespace Caro_Game_2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listDsnguoidung.Items.Add(txtTimkiem.Text, "12");
-            pb.Xoasukienclick();
-            
+            Hienthiloimoi(doithu, ten);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            pb.Themsukienclick();
         }
 
         private void btnFontchat_Click(object sender, EventArgs e)
@@ -208,10 +306,10 @@ namespace Caro_Game_2
         public void Hienthitindi(string ten, string noidung)
         {
             string s = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\fnil\\fcharset0 Times New Roman;}}{\\colortbl ;\\red125\\green0\\blue255;}\\viewkind4\\uc1\\pard\\cf1\\b\\f0\\fs20" + ten + "  : }";
-            rtbTinnhan.SelectedRtf= s;
+            rtbTinnhan.SelectedRtf = s;
             rtbTinnhan.Select(rtbTinnhan.Text.Length, 1);
             rtbTinnhan.SelectedRtf = noidung;
-            
+
             rtbTinnhan.ScrollToCaret();
         }
         public void Hienthitinden(string ten, string noidung)
@@ -247,7 +345,6 @@ namespace Caro_Game_2
                     rtbTinnhan.Text = "het gio";
                     Tudanhco();
                     //thực hiện gữi tin cho sv đánh random
-                    timer1.Enabled = false;
                 }
             }
             else
@@ -261,8 +358,6 @@ namespace Caro_Game_2
         {
             aidanh = b_aidanh;
             sogiay = 30;
-            timer1.Interval = 1000;
-            timer1.Enabled = true;
         }
         //-----------------
         private void button3_Click(object sender, EventArgs e)
@@ -283,6 +378,7 @@ namespace Caro_Game_2
             string tendoithu = listDsnguoidung.SelectedItems[0].Text;
             MoiChoi mc = new MoiChoi();
             mc.tendoithu = tendoithu;
+            mc.tenminh = ten;
             mc.ShowDialog();
         }
 
@@ -299,10 +395,10 @@ namespace Caro_Game_2
             listDsnguoidung.Clear();
             for (int i = 0; i < dsnc.Length; i++)
             {
-                if(txtTimkiem.Text.Trim()=="")
+                if (txtTimkiem.Text.Trim() == "")
                     listDsnguoidung.Items.Add(dsnc[i]);
                 else
-                    if(dsnc[i].Contains(txtTimkiem.Text.Trim()))
+                    if (dsnc[i].Contains(txtTimkiem.Text.Trim()))
                         listDsnguoidung.Items.Add(dsnc[i]);
             }
         }
@@ -313,12 +409,6 @@ namespace Caro_Game_2
             Danhco(15, 16);
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            Thread td = new Thread(new ThreadStart(Laydl));
-            td.Start();
-            timer2.Enabled = false;
-            timer2.Stop();
-        }
+      
     }
 }

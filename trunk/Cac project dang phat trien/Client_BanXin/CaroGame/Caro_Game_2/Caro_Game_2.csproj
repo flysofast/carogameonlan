@@ -56,6 +56,7 @@
     <Compile Include="Ban_AI.Designer.cs">
       <DependentUpon>Ban_AI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caro_Client.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

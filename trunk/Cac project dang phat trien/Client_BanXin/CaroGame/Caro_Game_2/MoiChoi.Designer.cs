@@ -50,6 +50,7 @@
             this.btnGuiloimoi.TabIndex = 1;
             this.btnGuiloimoi.Text = "Gửi Đi";
             this.btnGuiloimoi.UseVisualStyleBackColor = true;
+            this.btnGuiloimoi.Click += new System.EventHandler(this.btnGuiloimoi_Click);
             // 
             // label1
             // 

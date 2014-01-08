@@ -12,7 +12,7 @@ namespace Caro_Game_2
 {
     public partial class NhanLoiMoi : Form
     {
-        public string noidunglm, tendthu;
+        public string noidunglm, tendthu,tenminh;
         public NhanLoiMoi()
         {
             InitializeComponent();
@@ -26,9 +26,15 @@ namespace Caro_Game_2
         private void btnDongy_Click(object sender, EventArgs e)
         {
             //code xử lý đồng ý...
+            Caro_Client.DongY(tenminh,tendthu);
+            //Game gm = Parent as Game;
+            //gm.dangchoi = true;
+            //gm.doithu = tendthu;
+            setVaoChoi(tendthu);
             this.Close();
         }
-
+        public delegate void dlgsetVaoChoi(string doithu);
+        public dlgsetVaoChoi setVaoChoi;
         private void NhanLoiMoi_Load(object sender, EventArgs e)
         {
             rtbNoidungloimoi.Text = noidunglm;

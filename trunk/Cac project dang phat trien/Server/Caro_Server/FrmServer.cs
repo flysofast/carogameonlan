@@ -49,7 +49,6 @@ namespace Caro_Server
             AppendText(listener.LocalEndpoint + " đang chờ kết nối...", Color.Green);
         }
         static Dictionary<string, Socket> clientList = new Dictionary<string, Socket>();
-        static Dictionary<Socket, NetworkStream> streamList = new Dictionary<Socket, NetworkStream>();
         void Listen()
         {
             try
@@ -61,14 +60,14 @@ namespace Caro_Server
                     Thread clientCommunicating = new Thread(clientProcess);
                     clientCommunicating.IsBackground = true;
                     clientCommunicating.Start(clientSoc);
-                    AppendText("Đã nhận kết nối từ " + clientSoc.RemoteEndPoint , Color.Green);
+                    AppendText("Đã nhận kết nối từ " + clientSoc.RemoteEndPoint, Color.Green);
                 }
             }
             catch (Exception ex)
             {
-                
-                AppendText("Listen:",Color.Red);
-                AppendText(ex.Message , Color.Red);
+
+                AppendText("Listen:", Color.Red);
+                AppendText(ex.Message, Color.Red);
             }
         }
 
@@ -95,6 +94,9 @@ namespace Caro_Server
 
                     // Nhận dữ liệu từ client
                     string str = reader.ReadLine();
+
+                    
+
                     AppendText(string.Format("{0}: {1}", clientSoc.RemoteEndPoint, str), Color.Black);
 
                     //Nếu chưa đăng kí alias
@@ -185,15 +187,22 @@ namespace Caro_Server
 
                     //Client kết nối tới chưa đăng kí alias gửi tin chùa hoặc không theo đúng cấu trúc
                     writer.WriteLine("Da nhan duoc lenh nhung khong thuc hien thao tac gi. Kiem tra lai cau truc tin nhan gui di!");
-                    AppendText("Không thực hiện hành động gì",Color.Green);
+                    AppendText("Không thực hiện hành động gì", Color.Green);
                 }
 
             }
             catch (Exception ex)
             {
-                AppendText("clientProcess:",Color.Red);
+                AppendText("clientProcess:", Color.Red);
                 AppendText(ex.Message, Color.Red);
+                stream.Close();
+                clientSoc.Close();
 
+                AppendText("Ngắt kết nối đến " + clientList.First(p => p.Value == clientSoc).Key, Color.Green);
+                clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
+                
+                UpdateClientsListDisplay();
+                //clientSoc.Close();
                 //Có lỗi xảy ra, gửi thông báo cho client
                 //writer.WriteLine("/:ER:/");
 
@@ -203,7 +212,7 @@ namespace Caro_Server
 
         void BroadcastClientList()
         {
-            string cls ="";
+            string cls = "";
             foreach (var client in clientList)
             {
                 cls += client.Key + ";";
@@ -214,7 +223,7 @@ namespace Caro_Server
                 var st = new NetworkStream(cs);
                 var wr = new StreamWriter(st);
                 wr.AutoFlush = true;
-                wr.WriteLine(string.Format("/:CL:/{0}",cls));
+                wr.WriteLine(string.Format("/:CL:/{0}", cls));
             }
         }
         /// <summary>
@@ -223,10 +232,10 @@ namespace Caro_Server
         /// <param name="s">xâu nhập vào</param>
         /// <param name="tagname">tên tag</param>
         /// <returns>nội dung của tag</returns>
-        string GetElement(string s,string tagname)
+        string GetElement(string s, string tagname)
         {
-            int start = s.IndexOf(tagname) + tagname.Length +1;
-            int length = s.LastIndexOf("/" + tagname) - start-1;
+            int start = s.IndexOf(tagname) + tagname.Length + 1;
+            int length = s.LastIndexOf("/" + tagname) - start - 1;
             return s.Substring(start, length);
         }
         /// <summary>
@@ -248,7 +257,7 @@ namespace Caro_Server
             rtbLog.SelectionLength = 0;
 
             rtbLog.SelectionColor = color;
-            rtbLog.AppendText(text+"\r\n");
+            rtbLog.AppendText(text + "\r\n");
             rtbLog.SelectionColor = rtbLog.ForeColor;
             rtbLog.ScrollToCaret();
         }
@@ -259,7 +268,7 @@ namespace Caro_Server
             this.Close();
         }
 
-       
+
 
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,9 +56,7 @@
             this.btnColorchat = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnGui = new System.Windows.Forms.Button();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -221,7 +218,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(197, 15);
+            this.label7.Location = new System.Drawing.Point(225, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 17);
             this.label7.TabIndex = 6;
@@ -232,7 +229,7 @@
             this.lblTysophai.AutoSize = true;
             this.lblTysophai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTysophai.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTysophai.Location = new System.Drawing.Point(218, 16);
+            this.lblTysophai.Location = new System.Drawing.Point(246, 16);
             this.lblTysophai.Name = "lblTysophai";
             this.lblTysophai.Size = new System.Drawing.Size(17, 17);
             this.lblTysophai.TabIndex = 5;
@@ -243,7 +240,7 @@
             this.lblTysotrai.AutoSize = true;
             this.lblTysotrai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTysotrai.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTysotrai.Location = new System.Drawing.Point(173, 16);
+            this.lblTysotrai.Location = new System.Drawing.Point(201, 16);
             this.lblTysotrai.Name = "lblTysotrai";
             this.lblTysotrai.Size = new System.Drawing.Size(17, 17);
             this.lblTysotrai.TabIndex = 4;
@@ -254,7 +251,7 @@
             this.lblTendoithu.AutoSize = true;
             this.lblTendoithu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTendoithu.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTendoithu.Location = new System.Drawing.Point(270, 16);
+            this.lblTendoithu.Location = new System.Drawing.Point(312, 16);
             this.lblTendoithu.Name = "lblTendoithu";
             this.lblTendoithu.Size = new System.Drawing.Size(71, 17);
             this.lblTendoithu.TabIndex = 3;
@@ -265,7 +262,7 @@
             this.lblTimeright.AutoSize = true;
             this.lblTimeright.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeright.ForeColor = System.Drawing.Color.Red;
-            this.lblTimeright.Location = new System.Drawing.Point(374, 16);
+            this.lblTimeright.Location = new System.Drawing.Point(429, 15);
             this.lblTimeright.Name = "lblTimeright";
             this.lblTimeright.Size = new System.Drawing.Size(34, 17);
             this.lblTimeright.TabIndex = 2;
@@ -276,7 +273,7 @@
             this.lblTentoi.AutoSize = true;
             this.lblTentoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTentoi.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTentoi.Location = new System.Drawing.Point(87, 15);
+            this.lblTentoi.Location = new System.Drawing.Point(110, 15);
             this.lblTentoi.Name = "lblTentoi";
             this.lblTentoi.Size = new System.Drawing.Size(31, 17);
             this.lblTentoi.TabIndex = 1;
@@ -314,11 +311,6 @@
             this.btnColorchat.UseVisualStyleBackColor = true;
             this.btnColorchat.Click += new System.EventHandler(this.btnColorchat_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btnGui
             // 
             this.btnGui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,10 +322,6 @@
             this.btnGui.Text = "Gửi";
             this.btnGui.UseVisualStyleBackColor = true;
             this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
-            // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Game
             // 
@@ -396,8 +384,6 @@
         private System.Windows.Forms.Button btnColorchat;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnGui;
-        private System.Windows.Forms.Timer timer2;
     }
 }
