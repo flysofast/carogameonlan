@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanLoiMoi));
             this.btnDongy = new System.Windows.Forms.Button();
             this.btnHuybo = new System.Windows.Forms.Button();
             this.rtbNoidungloimoi = new System.Windows.Forms.RichTextBox();
@@ -117,6 +118,7 @@
             this.Controls.Add(this.rtbNoidungloimoi);
             this.Controls.Add(this.btnHuybo);
             this.Controls.Add(this.btnDongy);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NhanLoiMoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thách đấu";

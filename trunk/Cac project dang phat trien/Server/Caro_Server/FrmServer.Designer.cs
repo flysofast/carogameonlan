@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmServer));
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.rtbClients = new System.Windows.Forms.RichTextBox();
@@ -98,6 +99,7 @@
             this.Controls.Add(this.rtbClients);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rtbLog);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmServer";
             this.Text = "Caro Game Server";
             this.Load += new System.EventHandler(this.FrmServer_Load);
