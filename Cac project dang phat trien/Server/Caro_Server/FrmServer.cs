@@ -125,9 +125,10 @@ namespace Caro_Server
 
                             AppendText(clientSoc.RemoteEndPoint + " đã được thêm vào danh sách với alias \""
                                 + alias + "\".", Color.Green);
-
-                            UpdateClientsListDisplay();
+                            
                             writer.WriteLine("/:AD:/");
+                            UpdateClientsList();
+                            
                             registered = true;
                             continue;
                         }
@@ -148,7 +149,7 @@ namespace Caro_Server
 
                             clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
 
-                            UpdateClientsListDisplay();
+                            UpdateClientsList();
                             break;
                         }
 
@@ -201,7 +202,7 @@ namespace Caro_Server
                 AppendText("Ngắt kết nối đến \"" + clientList.First(p => p.Value == clientSoc).Key + "\".", Color.Green);
                 clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
 
-                UpdateClientsListDisplay();
+                UpdateClientsList();
                 //clientSoc.Close();
                 //Có lỗi xảy ra, gửi thông báo cho client
                 //writer.WriteLine("/:ER:/");
@@ -241,7 +242,7 @@ namespace Caro_Server
         /// <summary>
         /// Hàm cập nhật lại danh sách client được hiển thị trên form
         /// </summary>
-        void UpdateClientsListDisplay()
+        void UpdateClientsList()
         {
             rtbClients.Clear();
             foreach (var client in clientList)
