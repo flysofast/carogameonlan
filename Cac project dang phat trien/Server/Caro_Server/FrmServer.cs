@@ -41,6 +41,8 @@ namespace Caro_Server
         Thread clientListening;
         private void FrmServer_Load(object sender, EventArgs e)
         {
+            int a = 999999;
+            MessageBox.Show(a.ToString());
             IPAddress address = IPAddress.Parse(GetLocalIPAddress());
             listener = new TcpListener(address, 9999);
             clientListening = new Thread(new ThreadStart(Listen));
