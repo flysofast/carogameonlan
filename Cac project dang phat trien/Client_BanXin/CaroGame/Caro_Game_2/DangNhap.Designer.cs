@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.btnStart = new System.Windows.Forms.Button();
             this.txtTendangnhap = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTendangnhap);
             this.Controls.Add(this.btnStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng kí người chơi mới";
