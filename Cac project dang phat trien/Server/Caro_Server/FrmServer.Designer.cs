@@ -37,6 +37,7 @@
             // 
             // rtbLog
             // 
+            this.rtbLog.BackColor = System.Drawing.Color.AliceBlue;
             this.rtbLog.Location = new System.Drawing.Point(13, 25);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
@@ -46,16 +47,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(640, 298);
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(626, 298);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Đóng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rtbClients
             // 
+            this.rtbClients.BackColor = System.Drawing.Color.AliceBlue;
             this.rtbClients.Location = new System.Drawing.Point(549, 25);
             this.rtbClients.Name = "rtbClients";
             this.rtbClients.ReadOnly = true;
@@ -85,6 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(724, 327);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

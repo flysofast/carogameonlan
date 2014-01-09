@@ -141,15 +141,16 @@ namespace Caro_Server
                         //KHÔNG GỬI TRẢ XÁC NHẬN VỀ CLIENT VÌ CLIENT ĐÃ ĐÓNG KẾT NỐI
                         if (str.ToUpper() == "/:DC:/")
                         {
-                            AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối.", Color.Green);
+                            //AppendText(clientSoc.RemoteEndPoint + " đã ngắt kết nối.", Color.Green);
 
 
                             stream.Close();
                             clientSoc.Close();
 
-                            clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
+                            //clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
 
-                            UpdateClientsList();
+                            //UpdateClientsList();
+                            clientListRemove(clientSoc);
                             break;
                         }
 
@@ -199,10 +200,8 @@ namespace Caro_Server
                 stream.Close();
                 clientSoc.Close();
 
-                AppendText("Ngắt kết nối đến \"" + clientList.First(p => p.Value == clientSoc).Key + "\".", Color.Green);
-                clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
-
-                UpdateClientsList();
+                clientListRemove(clientSoc);
+                //UpdateClientsList();
                 //clientSoc.Close();
                 //Có lỗi xảy ra, gửi thông báo cho client
                 //writer.WriteLine("/:ER:/");
@@ -211,20 +210,44 @@ namespace Caro_Server
 
         }
 
+        void clientListRemove(Socket clientSoc)
+        {
+
+            try
+            {
+                AppendText("Ngắt kết nối đến \"" + clientList.First(p => p.Value == clientSoc).Key + "\".", Color.Green);
+                clientList.Remove(clientList.First(p => p.Value == clientSoc).Key);
+                UpdateClientsList();
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+        }
         void BroadcastClientList()
         {
-            string cls = "";
-            foreach (var client in clientList)
+            try
             {
-                cls += client.Key + ";";
+                string cls = "";
+                foreach (var client in clientList)
+                {
+                    cls += client.Key + ";";
+                }
+                foreach (var client in clientList)
+                {
+                    Socket cs = client.Value;
+                    var st = new NetworkStream(cs);
+                    var wr = new StreamWriter(st);
+                    wr.AutoFlush = true;
+                    wr.WriteLine(string.Format("/:CL:/{0}", cls));
+                }
             }
-            foreach (var client in clientList)
+            catch (Exception ex)
             {
-                Socket cs = client.Value;
-                var st = new NetworkStream(cs);
-                var wr = new StreamWriter(st);
-                wr.AutoFlush = true;
-                wr.WriteLine(string.Format("/:CL:/{0}", cls));
+                
+               AppendText("BroadcastClientList:", Color.Red);
+                AppendText(ex.Message, Color.Red);
             }
         }
         /// <summary>
