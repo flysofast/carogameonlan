@@ -58,6 +58,7 @@
             this.btnThoatgame = new System.Windows.Forms.Button();
             this.btnBocuoc = new System.Windows.Forms.Button();
             this.btnRoibanchoi = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,7 @@
             // listDsnguoidung
             // 
             this.listDsnguoidung.BackColor = System.Drawing.Color.AliceBlue;
+            this.listDsnguoidung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listDsnguoidung.FullRowSelect = true;
             this.listDsnguoidung.Location = new System.Drawing.Point(11, 64);
             this.listDsnguoidung.Name = "listDsnguoidung";
@@ -127,6 +129,7 @@
             // txtTimkiem
             // 
             this.txtTimkiem.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtTimkiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimkiem.Location = new System.Drawing.Point(11, 38);
             this.txtTimkiem.Name = "txtTimkiem";
             this.txtTimkiem.Size = new System.Drawing.Size(150, 20);
@@ -345,6 +348,11 @@
             this.btnRoibanchoi.UseVisualStyleBackColor = false;
             this.btnRoibanchoi.Click += new System.EventHandler(this.btnRoibanchoi_Click);
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 400;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,5 +418,6 @@
         private System.Windows.Forms.Button btnThoatgame;
         private System.Windows.Forms.Button btnBocuoc;
         private System.Windows.Forms.Button btnRoibanchoi;
+        private System.Windows.Forms.Timer timer2;
     }
 }

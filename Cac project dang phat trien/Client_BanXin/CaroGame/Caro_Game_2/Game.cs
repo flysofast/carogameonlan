@@ -38,7 +38,7 @@ namespace Caro_Game_2
             AcceptButton = btnGui;
 
             //tạo diện tích cho form Game
-            Width = 912;
+            Width = 995;
             Height = 610;
 
             pb = new panelBan(18, 26, true, 2);
@@ -56,6 +56,8 @@ namespace Caro_Game_2
             thrNhan.IsBackground = true;
             thrNhan.Start();
             DangChoi();
+            dathang = 0;
+            timer2.Enabled = true;
         }
 
         //public delegate void SetBien();
@@ -317,14 +319,16 @@ namespace Caro_Game_2
         //hàm trả về kết quả thắng
         public void Xylythang(int xo) //Neu O thang thi xo=1, X thang thi xo=2
         {
-            TaoBan();
-            pb.Enabled = false;
             //--thêm,sửa--
             if (xo == 1)
+            {
+                dathang = 1;
                 Thietlaptyso(tysotrai, tysophai + 1);
+            }
             else
             {
                 Thietlaptyso(tysotrai + 1, tysophai);
+                TaoBan();
                 pb.Enabled = true;
             }
             timer1.Enabled = false;
@@ -507,6 +511,16 @@ namespace Caro_Game_2
             dangchoi = false;
             doithu = "";
             DangChoi();
+        }
+
+        public static int dathang = 0;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (dathang == 1)
+            {
+                TaoBan();
+                dathang = 0;
+            }
         }
 
 
