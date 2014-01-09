@@ -103,19 +103,17 @@ namespace Caro_Game_2
                 {
                     panelBan game = Parent as panelBan;
                     game.Xulythang(1);
-                    if (MessageBox.Show("O thang!! Ban co muon tiep tuc?", "Victory", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    {
-                        game.TaoBan();
-                    }
+                    //--sửa--
+                    MessageBox.Show("Đối thủ thắng!! Xin chia buồn với ban.", "Lost");
+                    //game.TaoBan();
                 }
                 if (KiemTra(x, y) == 2)// kiểm tra xem với X vừa đánh có tạo thành 1 dãy 5 X ko
                 {
                     panelBan game = Parent as panelBan;
                     game.Xulythang(2);
-                    if (MessageBox.Show("X thang!! Ban co muon tiep tuc?", "Victory", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    {
-                        game.TaoBan();
-                    }
+                    //--sửa--
+                    MessageBox.Show("Bạn thắng!! Xin chúc mừng bạn đã dành được 1 điểm", "Victory");
+                    //game.TaoBan();
                 }
             }
         }
@@ -153,19 +151,18 @@ namespace Caro_Game_2
                     {
                         panelBan game = Parent as panelBan;
                         game.Xulythang(1);
-                        if (MessageBox.Show("O thang!! Ban co muon tiep tuc?", "Victory", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                        {
-                            game.TaoBan();
-                        }
+                        //--sửa--
+                        MessageBox.Show("Đối thủ thắng!! Xin chia buồn với ban.", "Lost");
+                        //game.TaoBan();
+
                     }
                     if (KiemTra(x, y) == 2)// kiểm tra xem với X vừa đánh có tạo thành 1 dãy 5 X ko
                     {
                         panelBan game = Parent as panelBan;
                         game.Xulythang(2);
-                        if (MessageBox.Show("X thang!! Ban co muon tiep tuc?", "Victory", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                        {
-                            game.TaoBan();
-                        }
+                        //--có sửa--
+                        MessageBox.Show("Bạn thắng!! Xin chúc mừng bạn đã dành được 1 điểm", "Victory");
+                        //game.TaoBan();
                     }
                     //---
                 //}

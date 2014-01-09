@@ -49,8 +49,8 @@ namespace Caro_Game_2
             humanVsComputerToolStripMenuItem.Checked = false;
             humanVsHumanToolStripMenuItem.Checked = true;
 
-            //timer2.Interval = 100;
-            //timer2.Enabled = true;
+            pb.Xoasukienclick(); //--sua--
+
             thrNhan = new Thread(NhanDuLieu);
             thrNhan.IsBackground = true;
             thrNhan.Start();
@@ -176,8 +176,9 @@ namespace Caro_Game_2
             this.Controls.Remove(pb);
             pb = new panelBan(18, map, true, gMode());
             pb.Parent = this;
-            pb.Left = 200;
+            pb.Left = 195;
             pb.Top = 80;
+            //pb.Xoasukienclick();
 
             //Width = map * 30 + 100;
             //Height = map * 30 + 150;
@@ -247,8 +248,9 @@ namespace Caro_Game_2
             Caro_Client.GuiToaDo(x, y, doithu);
             //txtTimkiem.Text = x.ToString() + " " + y.ToString();
             pb.Xoasukienclick();
+            lblTimeleft.Text = lblTimeright.Text = "30s";
+            sogiay = 30;
             TimeStart(2);
-            lblTimeright.Text = "30s";
         }
 
         //Ham đánh tọa độ
@@ -256,8 +258,10 @@ namespace Caro_Game_2
         {
             pb.Danh_O(x, y);
             pb.Themsukienclick();
+            //--có sửa--
+            lblTimeleft.Text = lblTimeright.Text = "30s";
             TimeStart(1);
-            lblTimeleft.Text = "30s";
+            sogiay = 30;
         }
 
         //Ham tu danh
@@ -268,17 +272,29 @@ namespace Caro_Game_2
             int y = td[1];
             //code gui toa do danh tu dong:
             Caro_Client.GuiToaDo(x, y, doithu);
-            txtTimkiem.Text = x + " " + y;
+            //--có sửa--
+            pb.Xoasukienclick();
+            lblTimeleft.Text = lblTimeright.Text = "30s";
+            sogiay = 30;
+            aidanh = 2;
         }
 
         //hàm trả về kết quả thắng
         public void Xylythang(int xo) //Neu O thang thi xo=1, X thang thi xo=2
         {
+            TaoBan();
+            pb.Enabled = false;
+            //--thêm,sửa--
             if (xo == 1)
                 Thietlaptyso(tysotrai, tysophai + 1);
             else
+            {
                 Thietlaptyso(tysotrai + 1, tysophai);
+                pb.Enabled = true;
+            }
+            timer1.Enabled = false;
             lblTimeleft.Text = lblTimeright.Text = "30s";
+            sogiay = 30;
         }
 
         //Hàm thiết lập tỷ số
@@ -298,7 +314,8 @@ namespace Caro_Game_2
 
             for (int i = 0; i < dsnc.Length; i++)
             {
-                listDsnguoidung.Items.Add(dsnc[i]);
+                if (dsnc[i] != ten)//--sửa--
+                    listDsnguoidung.Items.Add(dsnc[i]);
             }
         }
 
@@ -319,6 +336,28 @@ namespace Caro_Game_2
             nlm.ShowDialog();
             
         }
+
+        //--Thêm--
+        //Hàm xử lý xin hòa, bỏ cuộc
+        public void XinHoa()
+        {
+            if (MessageBox.Show("Đối thủ xin hòa. Bạn có đồ ý không?", "Xin Hòa", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                //code gửi phản hồi xin hòa 
+                TaoBan();
+            }
+        }
+        public void DongYXinHoa()
+        {
+            MessageBox.Show("Đối thủ đã đồng ý hòa ván này. Bàn chơi được tạo lại!!!", "Xin Hòa");
+            TaoBan();
+        }
+        public void DongYBoCuoc()
+        {
+            MessageBox.Show("Đối thủ đã bỏ cuộc ván này. Bàn chơi được tạo lại!!!", "Bỏ Cuộc");
+            TaoBan();
+        }
+        //----------------
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -365,7 +404,7 @@ namespace Caro_Game_2
 
         //Đếm ngược thời gian chơi:
         int sogiay, aidanh;
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) //--có thay đổi--
         {
             if (aidanh == 1)
             {
@@ -377,7 +416,6 @@ namespace Caro_Game_2
                 else
                 {
                     Tudanhco();
-                    //thực hiện gữi tin cho sv đánh random
                 }
             }
             else
@@ -386,6 +424,7 @@ namespace Caro_Game_2
                 sogiay--;
             }
         }
+
         //Hàm chạy thời gian chơi:
         public void TimeStart(int b_aidanh)
         {
@@ -408,6 +447,8 @@ namespace Caro_Game_2
         private void listDsnguoidung_DoubleClick(object sender, EventArgs e)
         {
             if (listDsnguoidung.Items.Count <= 0)
+                return;
+            if (listDsnguoidung.SelectedItems[0].Text == null) //--them--
                 return;
             string tendoithu = listDsnguoidung.SelectedItems[0].Text;
             MoiChoi mc = new MoiChoi();

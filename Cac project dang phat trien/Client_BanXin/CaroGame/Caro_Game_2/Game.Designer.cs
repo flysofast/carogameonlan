@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,7 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btnGui = new System.Windows.Forms.Button();
             this.rtbTinnhan = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -385,5 +387,6 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnGui;
         private System.Windows.Forms.RichTextBox rtbTinnhan;
+        private System.Windows.Forms.Timer timer1;
     }
 }

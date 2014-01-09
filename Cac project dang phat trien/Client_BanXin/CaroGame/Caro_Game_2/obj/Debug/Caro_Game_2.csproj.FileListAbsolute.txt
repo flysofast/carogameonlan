@@ -86,3 +86,16 @@ D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGam
 D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.NhanLoiMoi.resources
 D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
 D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe.config
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.exe
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.pdb
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.pdb
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csprojResolveAssemblyReference.cache
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Ban.resources
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.DangNhap.resources
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Game.resources
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.MoiChoi.resources
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.NhanLoiMoi.resources
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
+C:\CaroGameSVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
