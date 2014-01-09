@@ -29,6 +29,7 @@ namespace Caro_Game_2
         {
             //code gửi lời mời
             //--thêm--
+            Caro_Client.GuiLoiMoi(tendoithu, tenminh,rtbNDLoimoi.Text);
             lblChophanhoi.Visible = true;
             btnGuiloimoi.Visible = false;
             btnHuyloimoi.Visible = true;

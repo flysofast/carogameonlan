@@ -17,22 +17,26 @@ namespace Caro_Game_2
         {
             InitializeComponent();
         }
-
+        
         private void btnHuybo_Click(object sender, EventArgs e)
         {
-            Caro_Client.TuChoi(tendthu, "TuChoi");
+            Caro_Client.TuChoi(tendthu,"TuChoi");
             this.Close();
+            //Khi quá thời gian 
+            //    Caro_Client.TuChoi(tendthu,"KhongTraLoi");
+            //Đóng form nhận lời mời
         }
 
         private void btnDongy_Click(object sender, EventArgs e)
         {
             //code xử lý đồng ý...
             Caro_Client.DongY(tenminh,tendthu);
-            MessageBox.Show("Bắt đầu chơi với " + tendthu);
             //Game gm = Parent as Game;
             //gm.dangchoi = true;
             //gm.doithu = tendthu;
             setVaoChoi(tendthu);
+            this.Hide();
+            MessageBox.Show("Bắt đầu chơi với " + tendthu);
             this.Close();
         }
         public delegate void dlgsetVaoChoi(string doithu);

@@ -114,6 +114,7 @@
             // 
             // listDsnguoidung
             // 
+            this.listDsnguoidung.FullRowSelect = true;
             this.listDsnguoidung.Location = new System.Drawing.Point(11, 64);
             this.listDsnguoidung.Name = "listDsnguoidung";
             this.listDsnguoidung.Size = new System.Drawing.Size(150, 479);

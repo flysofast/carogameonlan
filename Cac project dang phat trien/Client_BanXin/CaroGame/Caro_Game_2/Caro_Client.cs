@@ -57,6 +57,12 @@ namespace Caro_Game_2
         {
             Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:LM:/{1},{2}</content>", doithu, tenminh, noidung));
         }
+
+        public static void HuyLoiMoi(string doithu, string tenminh)
+        {
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:LM:/{1}</content>", doithu, tenminh));
+        }
+
         public static void DongY(string tenminh,string doithu)
         {
             Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:DY:/{1}</content>", doithu,tenminh));
