@@ -40,26 +40,31 @@
             // 
             // btnDongy
             // 
+            this.btnDongy.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDongy.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDongy.Location = new System.Drawing.Point(73, 148);
             this.btnDongy.Name = "btnDongy";
             this.btnDongy.Size = new System.Drawing.Size(89, 30);
             this.btnDongy.TabIndex = 0;
             this.btnDongy.Text = "Đồng ý";
-            this.btnDongy.UseVisualStyleBackColor = true;
+            this.btnDongy.UseVisualStyleBackColor = false;
             this.btnDongy.Click += new System.EventHandler(this.btnDongy_Click);
             // 
             // btnHuybo
             // 
+            this.btnHuybo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnHuybo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnHuybo.Location = new System.Drawing.Point(200, 148);
             this.btnHuybo.Name = "btnHuybo";
             this.btnHuybo.Size = new System.Drawing.Size(89, 30);
             this.btnHuybo.TabIndex = 1;
             this.btnHuybo.Text = "Hủy Bỏ";
-            this.btnHuybo.UseVisualStyleBackColor = true;
+            this.btnHuybo.UseVisualStyleBackColor = false;
             this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
             // 
             // rtbNoidungloimoi
             // 
+            this.rtbNoidungloimoi.BackColor = System.Drawing.Color.AliceBlue;
             this.rtbNoidungloimoi.Enabled = false;
             this.rtbNoidungloimoi.Location = new System.Drawing.Point(26, 58);
             this.rtbNoidungloimoi.Name = "rtbNoidungloimoi";
@@ -103,7 +108,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(364, 187);
+            this.ControlBox = false;
             this.Controls.Add(this.lblTendoithu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -111,7 +118,8 @@
             this.Controls.Add(this.btnHuybo);
             this.Controls.Add(this.btnDongy);
             this.Name = "NhanLoiMoi";
-            this.Text = "Nhận lời mời";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thách đấu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanLoiMoi_FormClosing);
             this.Load += new System.EventHandler(this.NhanLoiMoi_Load);
             this.ResumeLayout(false);

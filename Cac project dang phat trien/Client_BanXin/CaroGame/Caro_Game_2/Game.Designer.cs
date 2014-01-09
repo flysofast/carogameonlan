@@ -64,11 +64,12 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Turquoise;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gamesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(893, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(979, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -113,10 +114,11 @@
             // 
             // listDsnguoidung
             // 
+            this.listDsnguoidung.BackColor = System.Drawing.Color.AliceBlue;
             this.listDsnguoidung.FullRowSelect = true;
             this.listDsnguoidung.Location = new System.Drawing.Point(11, 64);
             this.listDsnguoidung.Name = "listDsnguoidung";
-            this.listDsnguoidung.Size = new System.Drawing.Size(150, 479);
+            this.listDsnguoidung.Size = new System.Drawing.Size(150, 487);
             this.listDsnguoidung.TabIndex = 1;
             this.listDsnguoidung.UseCompatibleStateImageBehavior = false;
             this.listDsnguoidung.View = System.Windows.Forms.View.List;
@@ -124,6 +126,7 @@
             // 
             // txtTimkiem
             // 
+            this.txtTimkiem.BackColor = System.Drawing.Color.AliceBlue;
             this.txtTimkiem.Location = new System.Drawing.Point(11, 38);
             this.txtTimkiem.Name = "txtTimkiem";
             this.txtTimkiem.Size = new System.Drawing.Size(150, 20);
@@ -132,8 +135,8 @@
             // 
             // rtbWriteChat
             // 
-            this.rtbWriteChat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbWriteChat.Location = new System.Drawing.Point(695, 351);
+            this.rtbWriteChat.BackColor = System.Drawing.Color.AliceBlue;
+            this.rtbWriteChat.Location = new System.Drawing.Point(695, 381);
             this.rtbWriteChat.Name = "rtbWriteChat";
             this.rtbWriteChat.Size = new System.Drawing.Size(190, 30);
             this.rtbWriteChat.TabIndex = 10;
@@ -149,7 +152,7 @@
             this.groupBox1.Controls.Add(this.lblTimeright);
             this.groupBox1.Controls.Add(this.lblTentoi);
             this.groupBox1.Controls.Add(this.lblTimeleft);
-            this.groupBox1.Location = new System.Drawing.Point(195, 38);
+            this.groupBox1.Location = new System.Drawing.Point(194, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(469, 38);
             this.groupBox1.TabIndex = 11;
@@ -237,7 +240,7 @@
             // 
             this.btnFontchat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFontchat.Image = ((System.Drawing.Image)(resources.GetObject("btnFontchat.Image")));
-            this.btnFontchat.Location = new System.Drawing.Point(779, 378);
+            this.btnFontchat.Location = new System.Drawing.Point(695, 354);
             this.btnFontchat.Name = "btnFontchat";
             this.btnFontchat.Size = new System.Drawing.Size(21, 21);
             this.btnFontchat.TabIndex = 12;
@@ -247,7 +250,7 @@
             // btnColorchat
             // 
             this.btnColorchat.Image = global::Caro_Game_2.Properties.Resources.colorgchat;
-            this.btnColorchat.Location = new System.Drawing.Point(751, 378);
+            this.btnColorchat.Location = new System.Drawing.Point(722, 354);
             this.btnColorchat.Name = "btnColorchat";
             this.btnColorchat.Size = new System.Drawing.Size(21, 21);
             this.btnColorchat.TabIndex = 13;
@@ -256,70 +259,98 @@
             // 
             // btnGui
             // 
+            this.btnGui.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnGui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGui.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnGui.Location = new System.Drawing.Point(810, 378);
+            this.btnGui.ForeColor = System.Drawing.Color.Azure;
+            this.btnGui.Location = new System.Drawing.Point(890, 379);
             this.btnGui.Name = "btnGui";
-            this.btnGui.Size = new System.Drawing.Size(75, 23);
+            this.btnGui.Size = new System.Drawing.Size(78, 32);
             this.btnGui.TabIndex = 14;
             this.btnGui.Text = "Gửi";
-            this.btnGui.UseVisualStyleBackColor = true;
+            this.btnGui.UseVisualStyleBackColor = false;
             this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
             // rtbTinnhan
             // 
-            this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbTinnhan.BackColor = System.Drawing.Color.AliceBlue;
+            this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbTinnhan.Location = new System.Drawing.Point(695, 39);
             this.rtbTinnhan.Name = "rtbTinnhan";
-            this.rtbTinnhan.Size = new System.Drawing.Size(190, 309);
+            this.rtbTinnhan.Size = new System.Drawing.Size(273, 309);
             this.rtbTinnhan.TabIndex = 15;
             this.rtbTinnhan.Text = "";
             // 
             // btnXinhoa
             // 
-            this.btnXinhoa.Location = new System.Drawing.Point(707, 438);
+            this.btnXinhoa.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnXinhoa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXinhoa.FlatAppearance.BorderSize = 0;
+            this.btnXinhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXinhoa.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXinhoa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnXinhoa.Location = new System.Drawing.Point(694, 438);
             this.btnXinhoa.Name = "btnXinhoa";
-            this.btnXinhoa.Size = new System.Drawing.Size(75, 30);
+            this.btnXinhoa.Size = new System.Drawing.Size(135, 55);
             this.btnXinhoa.TabIndex = 16;
-            this.btnXinhoa.Text = "Xin Hòa";
-            this.btnXinhoa.UseVisualStyleBackColor = true;
+            this.btnXinhoa.Text = "XIN HÒA";
+            this.btnXinhoa.UseVisualStyleBackColor = false;
             this.btnXinhoa.Click += new System.EventHandler(this.btnXinhoa_Click);
             // 
             // btnThoatgame
             // 
-            this.btnThoatgame.Location = new System.Drawing.Point(810, 492);
+            this.btnThoatgame.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnThoatgame.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThoatgame.FlatAppearance.BorderSize = 0;
+            this.btnThoatgame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoatgame.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnThoatgame.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThoatgame.Location = new System.Drawing.Point(830, 494);
             this.btnThoatgame.Name = "btnThoatgame";
-            this.btnThoatgame.Size = new System.Drawing.Size(75, 30);
+            this.btnThoatgame.Size = new System.Drawing.Size(138, 54);
             this.btnThoatgame.TabIndex = 17;
-            this.btnThoatgame.Text = "Thoát Game";
-            this.btnThoatgame.UseVisualStyleBackColor = true;
+            this.btnThoatgame.Text = "THOÁT";
+            this.btnThoatgame.UseVisualStyleBackColor = false;
             this.btnThoatgame.Click += new System.EventHandler(this.btnThoatgame_Click);
             // 
             // btnBocuoc
             // 
-            this.btnBocuoc.Location = new System.Drawing.Point(810, 438);
+            this.btnBocuoc.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBocuoc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBocuoc.FlatAppearance.BorderSize = 0;
+            this.btnBocuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBocuoc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnBocuoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBocuoc.Location = new System.Drawing.Point(830, 438);
             this.btnBocuoc.Name = "btnBocuoc";
-            this.btnBocuoc.Size = new System.Drawing.Size(75, 30);
+            this.btnBocuoc.Size = new System.Drawing.Size(138, 55);
             this.btnBocuoc.TabIndex = 18;
-            this.btnBocuoc.Text = "Bỏ Cuộc";
-            this.btnBocuoc.UseVisualStyleBackColor = true;
+            this.btnBocuoc.Text = "BỎ CUỘC";
+            this.btnBocuoc.UseVisualStyleBackColor = false;
             this.btnBocuoc.Click += new System.EventHandler(this.btnBocuoc_Click);
             // 
             // btnRoibanchoi
             // 
-            this.btnRoibanchoi.Location = new System.Drawing.Point(707, 492);
+            this.btnRoibanchoi.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRoibanchoi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRoibanchoi.FlatAppearance.BorderSize = 0;
+            this.btnRoibanchoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoibanchoi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRoibanchoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRoibanchoi.Location = new System.Drawing.Point(694, 494);
             this.btnRoibanchoi.Name = "btnRoibanchoi";
-            this.btnRoibanchoi.Size = new System.Drawing.Size(75, 30);
+            this.btnRoibanchoi.Size = new System.Drawing.Size(135, 54);
             this.btnRoibanchoi.TabIndex = 19;
-            this.btnRoibanchoi.Text = "Rời bàn chơi";
-            this.btnRoibanchoi.UseVisualStyleBackColor = true;
+            this.btnRoibanchoi.Text = "RỜI BÀN CHƠI";
+            this.btnRoibanchoi.UseVisualStyleBackColor = false;
             this.btnRoibanchoi.Click += new System.EventHandler(this.btnRoibanchoi_Click);
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 565);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(979, 565);
             this.ControlBox = false;
             this.Controls.Add(this.btnRoibanchoi);
             this.Controls.Add(this.btnBocuoc);
