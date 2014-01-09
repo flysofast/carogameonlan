@@ -535,6 +535,7 @@ namespace Caro_Game_2
             dangchoi = false;
             doithu = "";
             DangChoi();
+            dathang = 1;
             Thietlaptyso(0, 0);
             demnguoc = 0;
             lblTimeleft.Text = lblTimeright.Text = "30s";
