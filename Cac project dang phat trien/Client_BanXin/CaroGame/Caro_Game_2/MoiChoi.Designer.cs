@@ -32,6 +32,7 @@
             this.btnGuiloimoi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTendoithu = new System.Windows.Forms.Label();
+            this.btnDong = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbNDLoimoi
@@ -47,7 +48,7 @@
             // 
             this.btnGuiloimoi.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnGuiloimoi.ForeColor = System.Drawing.Color.White;
-            this.btnGuiloimoi.Location = new System.Drawing.Point(136, 133);
+            this.btnGuiloimoi.Location = new System.Drawing.Point(87, 133);
             this.btnGuiloimoi.Name = "btnGuiloimoi";
             this.btnGuiloimoi.Size = new System.Drawing.Size(75, 30);
             this.btnGuiloimoi.TabIndex = 1;
@@ -73,6 +74,18 @@
             this.lblTendoithu.TabIndex = 3;
             this.lblTendoithu.Text = "Tên đối thủ";
             // 
+            // btnDong
+            // 
+            this.btnDong.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDong.ForeColor = System.Drawing.Color.White;
+            this.btnDong.Location = new System.Drawing.Point(180, 133);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(75, 30);
+            this.btnDong.TabIndex = 4;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.UseVisualStyleBackColor = false;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
             // MoiChoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -80,6 +93,7 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(351, 175);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDong);
             this.Controls.Add(this.lblTendoithu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuiloimoi);
@@ -98,5 +112,6 @@
         private System.Windows.Forms.Button btnGuiloimoi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTendoithu;
+        private System.Windows.Forms.Button btnDong;
     }
 }
