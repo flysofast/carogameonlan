@@ -103,6 +103,7 @@ namespace Caro_Game_2
                 {
                     panelBan game = Parent as panelBan;
                     game.Xulythang(1);
+                    Xoaskmd();
                     //--sửa--
                     MessageBox.Show("Đối thủ thắng!! Xin chia buồn với ban.", "Lost");
                     //game.TaoBan();
@@ -151,6 +152,7 @@ namespace Caro_Game_2
                     {
                         panelBan game = Parent as panelBan;
                         game.Xulythang(1);
+                        Xoaskmd();
                         //--sửa--
                         MessageBox.Show("Đối thủ thắng!! Xin chia buồn với ban.", "Lost");
                         //game.TaoBan();
