@@ -46,18 +46,18 @@ namespace Caro_Game_2
         {
             if (txtTendangnhap.Text.Trim() == "" || txtIpsv.Text.Trim() == "")
             {
-                lblThongbao.Text = "Bạn nhập thiếu thông tin!!!";
+                lblThongbao.Text = "Thông tin chưa đầy đủ!";
                 return;
             }
             if (txtTendangnhap.Text[0] >= 48 && txtTendangnhap.Text[0] <= 57)
             {
-                lblThongbao.Text = "Tên đăng nhập có ký tự số đầu!!";
+                lblThongbao.Text = "Tên đăng nhập không được có ký tự số ở đầu!";
                 return;
             }
             string tendn = txtTendangnhap.Text;
             try
             {
-                Caro_Client.KetNoiServer(txtIpsv.Text, 1);
+                Caro_Client.KetNoiServer(txtIpsv.Text, 9999);
                 Caro_Client.GuiAlias(tendn);
                 var reader = new StreamReader(Caro_Client.stream);
                 string str = reader.ReadLine();

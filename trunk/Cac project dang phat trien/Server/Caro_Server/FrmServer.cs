@@ -125,10 +125,10 @@ namespace Caro_Server
 
                             AppendText(clientSoc.RemoteEndPoint + " đã được thêm vào danh sách với alias \""
                                 + alias + "\".", Color.Green);
-                            
+
                             writer.WriteLine("/:AD:/");
                             UpdateClientsList();
-                            
+
                             registered = true;
                             continue;
                         }
@@ -222,7 +222,6 @@ namespace Caro_Server
             catch (Exception)
             {
                 
-                
             }
         }
         void BroadcastClientList()
@@ -245,8 +244,8 @@ namespace Caro_Server
             }
             catch (Exception ex)
             {
-                
-               AppendText("BroadcastClientList:", Color.Red);
+
+                AppendText("BroadcastClientList:", Color.Red);
                 AppendText(ex.Message, Color.Red);
             }
         }
@@ -288,8 +287,28 @@ namespace Caro_Server
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                foreach (var client in clientList)
+                {
+                    Socket cs = client.Value;
+                    var st = new NetworkStream(cs);
+                    var wr = new StreamWriter(st);
+                    wr.AutoFlush = true;
+                    wr.WriteLine(string.Format("/:DC:/"));
+                    st.Close();
+                    cs.Close();
+                }
 
-            this.Close();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                AppendText("BroadcastClientList:", Color.Red);
+                AppendText(ex.Message, Color.Red);
+            }
+           
         }
 
 
