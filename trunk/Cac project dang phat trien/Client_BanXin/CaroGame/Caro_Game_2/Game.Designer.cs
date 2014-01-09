@@ -268,7 +268,7 @@
             // 
             // rtbTinnhan
             // 
-            this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbTinnhan.Location = new System.Drawing.Point(695, 39);
             this.rtbTinnhan.Name = "rtbTinnhan";
             this.rtbTinnhan.Size = new System.Drawing.Size(190, 309);
@@ -339,7 +339,6 @@
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Game_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
