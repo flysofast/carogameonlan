@@ -98,8 +98,9 @@ namespace Caro_Game_2
                 {
 
                     string str = reader.ReadLine();
+                    string cmdCode = str.Substring(0, 6);
 
-                    if (str.Substring(0, 6) == "/:TD:/")
+                    if (cmdCode == "/:TD:/")
                     {
                         string[] td = str.Substring(6).Split(',');
                         int x = int.Parse(td[0]);
@@ -108,13 +109,13 @@ namespace Caro_Game_2
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:TN:/")
+                    if (cmdCode == "/:TN:/")
                     {
                         string tn = str.Substring(6);
                         Hienthitinden(doithu, Caro_Client.GiaiMa(tn));
                         continue;
                     }
-                    if (str.Substring(0, 6) == "/:LM:/")
+                    if (cmdCode == "/:LM:/")
                     {
                         string[] td = str.Substring(6).Split(',');
                         string nguoimoi = td[0].ToString();
@@ -128,7 +129,7 @@ namespace Caro_Game_2
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:DY:/")
+                    if (cmdCode == "/:DY:/")
                     {
                         doithu = str.Substring(6);
                         dangchoi = true;
@@ -140,7 +141,7 @@ namespace Caro_Game_2
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:TC:/")
+                    if (cmdCode == "/:TC:/")
                     {
                         mc.Close();
                         if (str.Substring(6) == "TuChoi")
@@ -153,7 +154,7 @@ namespace Caro_Game_2
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:XH:/")
+                    if (cmdCode == "/:XH:/")
                     {
                         //Xử lý xin hòa
                         DialogResult lkResult = MessageBox.Show("Đối thủ " + doithu + " muốn xin hòa", "Cầu hòa", MessageBoxButtons.YesNo);
@@ -173,7 +174,7 @@ namespace Caro_Game_2
                         }
                         continue;
                     }
-                    if (str.Substring(0, 6) == "/:CN:/")
+                    if (cmdCode == "/:CN:/")
                     {
                         MessageBox.Show("Đối thủ " + doithu + " đã chấp nhận hòa");
                         //Chấp nhận xin hòa
@@ -184,13 +185,13 @@ namespace Caro_Game_2
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:KK:/")
+                    if (cmdCode== "/:KK:/")
                     {
                         MessageBox.Show("Đối thủ " + doithu + " không đồng ý hòa");
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:BC:/")
+                    if (cmdCode == "/:BC:/")
                     {
                         MessageBox.Show("Đối thủ đã bỏ cuộc - Bạn là người chiến thắng");
                         Thietlaptyso(tysotrai + 1, tysophai);
@@ -204,7 +205,7 @@ namespace Caro_Game_2
                         //Mình là người thắng
                     }
 
-                    if (str.Substring(0, 6) == "/:CL:/")
+                    if (cmdCode == "/:CL:/")
                     {
                         Hienthidsnguoichoi(str.Substring(6));
                         continue;
@@ -223,7 +224,7 @@ namespace Caro_Game_2
                         continue;
                     }
 
-                    if (str.Substring(0, 6) == "/:NF:/")
+                    if (cmdCode == "/:NF:/")
                     {
                         MessageBox.Show("Đối thủ " + doithu + " đã thoát khỏi hệ thống");
                         dangchoi = false;
@@ -231,6 +232,15 @@ namespace Caro_Game_2
                         chodanh = 2;
                         DangChoi();
                         continue;
+                    }
+
+                    if (cmdCode == "/:DC:/")
+                    {
+                        Caro_Client.stream.Close();
+                        Caro_Client.client.Close();
+                        MessageBox.Show("Server đã ngắt kết nối. Vui lòng kết nối lại sau!");
+                       
+                        Application.Exit();
                     }
 
 
