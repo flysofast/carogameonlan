@@ -38,11 +38,6 @@
             this.humanVsComputerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listDsnguoidung = new System.Windows.Forms.ListView();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.rtbWriteChat = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,6 +54,10 @@
             this.btnGui = new System.Windows.Forms.Button();
             this.rtbTinnhan = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnXinhoa = new System.Windows.Forms.Button();
+            this.btnThoatgame = new System.Windows.Forms.Button();
+            this.btnBocuoc = new System.Windows.Forms.Button();
+            this.btnRoibanchoi = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -130,56 +129,6 @@
             this.txtTimkiem.Size = new System.Drawing.Size(150, 20);
             this.txtTimkiem.TabIndex = 2;
             this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(695, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(695, 440);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(695, 476);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 30);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(825, 404);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 30);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(825, 440);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 30);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // rtbWriteChat
             // 
@@ -320,35 +269,77 @@
             // rtbTinnhan
             // 
             this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbTinnhan.Location = new System.Drawing.Point(680, 36);
+            this.rtbTinnhan.Location = new System.Drawing.Point(695, 39);
             this.rtbTinnhan.Name = "rtbTinnhan";
             this.rtbTinnhan.Size = new System.Drawing.Size(190, 309);
             this.rtbTinnhan.TabIndex = 15;
             this.rtbTinnhan.Text = "";
+            // 
+            // btnXinhoa
+            // 
+            this.btnXinhoa.Location = new System.Drawing.Point(707, 438);
+            this.btnXinhoa.Name = "btnXinhoa";
+            this.btnXinhoa.Size = new System.Drawing.Size(75, 30);
+            this.btnXinhoa.TabIndex = 16;
+            this.btnXinhoa.Text = "Xin Hòa";
+            this.btnXinhoa.UseVisualStyleBackColor = true;
+            this.btnXinhoa.Click += new System.EventHandler(this.btnXinhoa_Click);
+            // 
+            // btnThoatgame
+            // 
+            this.btnThoatgame.Location = new System.Drawing.Point(810, 492);
+            this.btnThoatgame.Name = "btnThoatgame";
+            this.btnThoatgame.Size = new System.Drawing.Size(75, 30);
+            this.btnThoatgame.TabIndex = 17;
+            this.btnThoatgame.Text = "Thoát Game";
+            this.btnThoatgame.UseVisualStyleBackColor = true;
+            this.btnThoatgame.Click += new System.EventHandler(this.btnThoatgame_Click);
+            // 
+            // btnBocuoc
+            // 
+            this.btnBocuoc.Location = new System.Drawing.Point(810, 438);
+            this.btnBocuoc.Name = "btnBocuoc";
+            this.btnBocuoc.Size = new System.Drawing.Size(75, 30);
+            this.btnBocuoc.TabIndex = 18;
+            this.btnBocuoc.Text = "Bỏ Cuộc";
+            this.btnBocuoc.UseVisualStyleBackColor = true;
+            this.btnBocuoc.Click += new System.EventHandler(this.btnBocuoc_Click);
+            // 
+            // btnRoibanchoi
+            // 
+            this.btnRoibanchoi.Location = new System.Drawing.Point(707, 492);
+            this.btnRoibanchoi.Name = "btnRoibanchoi";
+            this.btnRoibanchoi.Size = new System.Drawing.Size(75, 30);
+            this.btnRoibanchoi.TabIndex = 19;
+            this.btnRoibanchoi.Text = "Rời bàn chơi";
+            this.btnRoibanchoi.UseVisualStyleBackColor = true;
+            this.btnRoibanchoi.Click += new System.EventHandler(this.btnRoibanchoi_Click);
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 565);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnRoibanchoi);
+            this.Controls.Add(this.btnBocuoc);
+            this.Controls.Add(this.btnThoatgame);
+            this.Controls.Add(this.btnXinhoa);
             this.Controls.Add(this.rtbTinnhan);
             this.Controls.Add(this.btnGui);
             this.Controls.Add(this.btnColorchat);
             this.Controls.Add(this.btnFontchat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rtbWriteChat);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTimkiem);
             this.Controls.Add(this.listDsnguoidung);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Game_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -368,11 +359,6 @@
         private System.Windows.Forms.ToolStripMenuItem humanVsComputerToolStripMenuItem;
         private System.Windows.Forms.ListView listDsnguoidung;
         private System.Windows.Forms.TextBox txtTimkiem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.RichTextBox rtbWriteChat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblTysophai;
@@ -389,5 +375,9 @@
         private System.Windows.Forms.Button btnGui;
         private System.Windows.Forms.RichTextBox rtbTinnhan;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnXinhoa;
+        private System.Windows.Forms.Button btnThoatgame;
+        private System.Windows.Forms.Button btnBocuoc;
+        private System.Windows.Forms.Button btnRoibanchoi;
     }
 }

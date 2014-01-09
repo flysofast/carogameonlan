@@ -91,7 +91,10 @@ namespace Caro_Game_2
             Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:KK:/</content>", doithu));
         }
 
-
+        public static void RoiBanChoi(string doithu)
+        {
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:RB:/</content>", doithu));
+        }
 
         public static string NhanDuLieu()
         {
