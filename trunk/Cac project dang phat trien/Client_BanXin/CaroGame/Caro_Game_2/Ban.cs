@@ -24,8 +24,8 @@ namespace Caro_Game_2
         /// true là O đánh
         /// false là X đánh
         /// </summary>
-        bool flag; 
-
+        bool flag;
+        bool luotdanh;
         /// <summary>
         /// Hàm tạo
         /// truyền vào kích cỡ 1 ô, số dòng, số cột, X hay O đánh
@@ -128,7 +128,7 @@ namespace Caro_Game_2
             int x = e.X / cellSize;// lấy số dòng
             int y = e.Y / cellSize; // lấy số cột
 
-            if (Data[x, y] == 0) // nếu ô này chưa đc đánh
+            if (Data[x, y] == 0 && luotdanh) // nếu ô này chưa đc đánh
             {
                 panelBan gtd = Parent as panelBan;
                 gtd.Tratoado(x, y);
@@ -176,12 +176,14 @@ namespace Caro_Game_2
         //Su kien mouse down
         public void Xoaskmd()
         {
-            this.MouseDown -= Ban_MouseDown;
+            //this.MouseDown -= Ban_MouseDown;
+            luotdanh = false;
         }
 
         public void Taoskmd()
         {
-            this.MouseDown += Ban_MouseDown;
+            //this.MouseDown += Ban_MouseDown;
+            luotdanh = true;
         }
 
         /// <summary>
