@@ -77,6 +77,10 @@ namespace Caro_Game_2
             rtbWriteChat.Enabled = dangchoi;
             btnGui.Enabled = dangchoi;//Và các nút khác tương tự
             //pb.Enabled = dangchoi;
+            //if (dangchoi)
+            //    pb.Themsukienclick();
+            //else
+            //    pb.Xoasukienclick();
             rtbTinnhan.Clear();
             btnBocuoc.Enabled = dangchoi;
             btnRoibanchoi.Enabled = dangchoi;
@@ -223,6 +227,8 @@ namespace Caro_Game_2
                     {
                         MessageBox.Show("Đối thủ " + doithu + " đã thoát khỏi hệ thống");
                         dangchoi = false;
+                        dathang = 1;
+                        chodanh = 2;
                         DangChoi();
                         continue;
                     }
