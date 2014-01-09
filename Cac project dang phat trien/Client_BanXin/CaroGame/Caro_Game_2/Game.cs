@@ -67,6 +67,9 @@ namespace Caro_Game_2
             btnGui.Enabled = dangchoi;//Và các nút khác tương tự
             pb.Enabled = dangchoi;
             rtbTinnhan.Clear();
+            btnBocuoc.Enabled = dangchoi;
+            btnRoibanchoi.Enabled = dangchoi;
+            btnXinhoa.Enabled = dangchoi;
             //Và nhiều nút khác
         }
         public bool dangchoi = false;
@@ -130,6 +133,7 @@ namespace Caro_Game_2
                             MessageBox.Show("Đối thủ đang bận chơi");
                         if (str.Substring(6) == "KhongTraLoi")
                             MessageBox.Show("Đối thủ không trả lời");
+                        listDsnguoidung.Enabled = true;
                         continue;
                     }
 
@@ -172,6 +176,13 @@ namespace Caro_Game_2
                     if (str.Substring(0, 6) == "/:CL:/")
                     {
                         Hienthidsnguoichoi(str.Substring(6));
+                        continue;
+                    }
+                    if (str.Substring(0, 6) == "/:RB:/")
+                    {
+                        dangchoi = false;
+                        DangChoi();
+                        doithu = "";
                         continue;
                     }
 
@@ -336,7 +347,7 @@ namespace Caro_Game_2
             listDsnguoidung.Clear();
             dsnc = ds.Split(';');
 
-            for (int i = 0; i < dsnc.Length; i++)
+            for (int i = 0; i < dsnc.Length - 1; i++)
             {
                 if (dsnc[i] != ten)//--sửa--
                     listDsnguoidung.Items.Add(dsnc[i]);
@@ -384,27 +395,6 @@ namespace Caro_Game_2
         }
         //----------------
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //test danh co:
-            string[] arrtd = txtTimkiem.Text.Split(' ');
-            int x = int.Parse(arrtd[0]);
-            int y = int.Parse(arrtd[1]);
-            Danhco(x, y);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Hienthiloimoi(doithu, ten);
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            txtTimkiem.Text = "";
-            txtTimkiem.Text = Caro_Client.GiaiMa(Caro_Client.MaHoa(rtbWriteChat.Rtf));
-        }
-
         private void btnFontchat_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
@@ -421,11 +411,6 @@ namespace Caro_Game_2
 
         //hien thi tin nhan
         //-------------------
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            txtTimkiem.Text = Caro_Client.MaHoa(rtbWriteChat.Rtf);
-        }
 
         //Đếm ngược thời gian chơi:
         int sogiay, aidanh;
@@ -457,17 +442,6 @@ namespace Caro_Game_2
             sogiay = 30;
         }
         //-----------------
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Caro_Client.XinHoa(doithu);
-        }
-
-        //Xử lý việc đóng form
-        private void Game_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Caro_Client.NgatKetNoi();
-            Application.Exit();
-        }
 
         private void listDsnguoidung_DoubleClick(object sender, EventArgs e)
         {
@@ -480,6 +454,7 @@ namespace Caro_Game_2
             mc.tendoithu = tendoithu;
             mc.tenminh = ten;
             mc.ShowDialog();
+            listDsnguoidung.Enabled = false;
         }
 
         private void btnGui_Click(object sender, EventArgs e)
@@ -509,6 +484,29 @@ namespace Caro_Game_2
         public void Laydl()
         {
             Danhco(15, 16);
+        }
+
+        private void btnThoatgame_Click(object sender, EventArgs e)
+        {
+            Caro_Client.NgatKetNoi();
+            Application.Exit();
+        }
+
+        private void btnXinhoa_Click(object sender, EventArgs e)
+        {
+            Caro_Client.XinHoa(doithu);
+        }
+
+        private void btnBocuoc_Click(object sender, EventArgs e)
+        {
+            Caro_Client.BoCuoc(doithu);
+        }
+
+        private void btnRoibanchoi_Click(object sender, EventArgs e)
+        {
+            dangchoi = false;
+            doithu = "";
+            DangChoi();
         }
 
 
