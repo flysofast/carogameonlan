@@ -89,7 +89,7 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -99,7 +99,7 @@
             this.humanVsHumanToolStripMenuItem,
             this.humanVsComputerToolStripMenuItem});
             this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
-            this.modeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.modeToolStripMenuItem.Text = "Mode";
             // 
             // humanVsHumanToolStripMenuItem
@@ -384,7 +384,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(979, 572);
-            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRoibanchoi);
             this.Controls.Add(this.btnBocuoc);
@@ -402,9 +401,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game";
+            this.Text = "Caro chess game";
             this.Load += new System.EventHandler(this.Game_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
