@@ -100,7 +100,6 @@ namespace Caro_Game_2
                         string[] td = str.Substring(6).Split(',');
                         string nguoimoi = td[0].ToString();
                         string noidung = td[1].ToString();
-
                         if (dangchoi)
                         {
                             Caro_Client.TuChoi(nguoimoi, "DangChoi");

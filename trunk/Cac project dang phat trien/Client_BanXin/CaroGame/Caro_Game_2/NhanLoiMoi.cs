@@ -21,6 +21,7 @@ namespace Caro_Game_2
         private void btnHuybo_Click(object sender, EventArgs e)
         {
             Caro_Client.TuChoi(tendthu,"TuChoi");
+            CloseForm = false;
             this.Close();
             //Khi quá thời gian 
             //    Caro_Client.TuChoi(tendthu,"KhongTraLoi");
@@ -37,6 +38,7 @@ namespace Caro_Game_2
             setVaoChoi(tendthu);
             this.Hide();
             MessageBox.Show("Bắt đầu chơi với " + tendthu);
+            CloseForm = false;
             this.Close();
         }
         public delegate void dlgsetVaoChoi(string doithu);
@@ -46,6 +48,31 @@ namespace Caro_Game_2
             rtbNoidungloimoi.Text = noidunglm;
             lblTendoithu.Text = tendthu;
             AcceptButton = btnDongy;
+            timerchophanhoi.Enabled = true;
+        }
+
+        int sogiay = 25;
+        private void timerchophanhoi_Tick(object sender, EventArgs e)
+        {
+            if (sogiay >= 0)
+            {
+                btnHuybo.Text = "Hủy Bỏ (" + sogiay + ")";
+                sogiay--;
+            }
+            else
+            {
+                //code huy loi moi
+                Caro_Client.TuChoi(tendthu, "KhongTraLoi");
+                CloseForm = false;
+                sogiay = 25;
+                this.Close();
+            }
+        }
+
+        bool CloseForm = true;
+        private void NhanLoiMoi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = CloseForm;
         }
     }
 }
