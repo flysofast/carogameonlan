@@ -59,17 +59,17 @@ namespace Caro_Game_2
             {
                 Caro_Client.KetNoiServer(txtIpsv.Text, 9999);
                 Caro_Client.GuiAlias(tendn);
-            var reader = new StreamReader(Caro_Client.stream);
-            string str = reader.ReadLine();
-            if (str.Substring(0, 6) == "/:AD:/")
-            {
-                Game fg = new Game();
-                fg.ten = tendn;
-                fg.Show();
-                this.Hide();
-            }
-            else if (str.Substring(0, 6) == "/:CF:/")
-                MessageBox.Show("Trùng tên - Vui lòng nhập tên khác");
+                var reader = new StreamReader(Caro_Client.stream);
+                string str = reader.ReadLine();
+                if (str.Substring(0, 6) == "/:AD:/")
+                {
+                    Game fg = new Game();
+                    fg.ten = tendn;
+                    fg.Show();
+                    this.Hide();
+                }
+                if (str.Substring(0, 6) == "/:CF:/")
+                    MessageBox.Show("Trùng tên - Vui lòng nhập tên khác");
             }
             catch (Exception ex)
             {

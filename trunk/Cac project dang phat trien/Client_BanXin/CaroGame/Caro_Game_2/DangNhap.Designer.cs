@@ -39,11 +39,12 @@
             // 
             // btnStart
             // 
+            this.btnStart.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(123, 149);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 32);
-            this.btnStart.TabIndex = 0;
+            this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -82,8 +83,8 @@
             this.txtIpsv.Location = new System.Drawing.Point(123, 62);
             this.txtIpsv.Name = "txtIpsv";
             this.txtIpsv.Size = new System.Drawing.Size(171, 20);
-            this.txtIpsv.TabIndex = 4;
-            this.txtIpsv.Text = "192.168.1.101";
+            this.txtIpsv.TabIndex = 0;
+            this.txtIpsv.Text = "192.168.1.104";
             // 
             // label2
             // 

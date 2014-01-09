@@ -311,6 +311,5 @@ namespace Caro_Game_2
             }
             return td;
         }
-
     }
 }
