@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 
 namespace Caro_Game_2
 {
@@ -54,13 +55,26 @@ namespace Caro_Game_2
                 return;
             }
             string tendn = txtTendangnhap.Text;
-
-            Caro_Client.KetNoiServer(txtIpsv.Text, 9999);
-            Caro_Client.GuiAlias(tendn);
-            Game fg = new Game();
-            fg.ten = tendn;
-            fg.Show();
-            this.Hide();
+            try
+            {
+                Caro_Client.KetNoiServer(txtIpsv.Text, 9999);
+                Caro_Client.GuiAlias(tendn);
+            var reader = new StreamReader(Caro_Client.stream);
+            string str = reader.ReadLine();
+            if (str.Substring(0, 6) == "/:AD:/")
+            {
+                Game fg = new Game();
+                fg.ten = tendn;
+                fg.Show();
+                this.Hide();
+            }
+            else if (str.Substring(0, 6) == "/:CF:/")
+                MessageBox.Show("Trùng tên - Vui lòng nhập tên khác");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kết nối máy chủ thất bại : " + ex.Message);
+            }
             //code xu ly dang nhap...
         }
     }
