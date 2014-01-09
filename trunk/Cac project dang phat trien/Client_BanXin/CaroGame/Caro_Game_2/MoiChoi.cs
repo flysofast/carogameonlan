@@ -33,5 +33,10 @@ namespace Caro_Game_2
             rtbNDLoimoi.Enabled = false;
             this.Close();
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
