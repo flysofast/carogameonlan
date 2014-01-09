@@ -237,7 +237,7 @@ namespace Caro_Game_2
                 count++;
             }
             i = 1;
-            while (y + i <= rows && Data[x, y + i] == Data[x, y])
+            while (y + i < rows && Data[x, y + i] == Data[x, y])
             {
                 i++;
                 count++;
