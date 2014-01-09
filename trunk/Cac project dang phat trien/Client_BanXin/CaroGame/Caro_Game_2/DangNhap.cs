@@ -57,7 +57,7 @@ namespace Caro_Game_2
             string tendn = txtTendangnhap.Text;
             try
             {
-                Caro_Client.KetNoiServer(txtIpsv.Text, 9999);
+                Caro_Client.KetNoiServer(txtIpsv.Text, 1);
                 Caro_Client.GuiAlias(tendn);
                 var reader = new StreamReader(Caro_Client.stream);
                 string str = reader.ReadLine();

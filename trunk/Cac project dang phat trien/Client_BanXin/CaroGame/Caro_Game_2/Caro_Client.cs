@@ -88,7 +88,7 @@ namespace Caro_Game_2
 
         public static void BoCuoc(string doithu)
         {
-            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:KK:/</content>", doithu));
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:BC:/</content>", doithu));
         }
 
         public static void RoiBanChoi(string doithu)
