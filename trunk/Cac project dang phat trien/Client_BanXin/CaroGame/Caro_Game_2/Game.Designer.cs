@@ -37,7 +37,6 @@
             this.humanVsComputerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listDsnguoidung = new System.Windows.Forms.ListView();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
-            this.rtbTinnhan = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btnGui = new System.Windows.Forms.Button();
+            this.rtbTinnhan = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -127,15 +127,6 @@
             this.txtTimkiem.Size = new System.Drawing.Size(150, 20);
             this.txtTimkiem.TabIndex = 2;
             this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
-            // 
-            // rtbTinnhan
-            // 
-            this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbTinnhan.Location = new System.Drawing.Point(695, 38);
-            this.rtbTinnhan.Name = "rtbTinnhan";
-            this.rtbTinnhan.Size = new System.Drawing.Size(190, 309);
-            this.rtbTinnhan.TabIndex = 3;
-            this.rtbTinnhan.Text = "";
             // 
             // button1
             // 
@@ -323,11 +314,21 @@
             this.btnGui.UseVisualStyleBackColor = true;
             this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
+            // rtbTinnhan
+            // 
+            this.rtbTinnhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbTinnhan.Location = new System.Drawing.Point(680, 36);
+            this.rtbTinnhan.Name = "rtbTinnhan";
+            this.rtbTinnhan.Size = new System.Drawing.Size(190, 309);
+            this.rtbTinnhan.TabIndex = 15;
+            this.rtbTinnhan.Text = "";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 565);
+            this.Controls.Add(this.rtbTinnhan);
             this.Controls.Add(this.btnGui);
             this.Controls.Add(this.btnColorchat);
             this.Controls.Add(this.btnFontchat);
@@ -338,7 +339,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.rtbTinnhan);
             this.Controls.Add(this.txtTimkiem);
             this.Controls.Add(this.listDsnguoidung);
             this.Controls.Add(this.menuStrip1);
@@ -365,7 +365,6 @@
         private System.Windows.Forms.ToolStripMenuItem humanVsComputerToolStripMenuItem;
         private System.Windows.Forms.ListView listDsnguoidung;
         private System.Windows.Forms.TextBox txtTimkiem;
-        private System.Windows.Forms.RichTextBox rtbTinnhan;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -385,5 +384,6 @@
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnGui;
+        private System.Windows.Forms.RichTextBox rtbTinnhan;
     }
 }

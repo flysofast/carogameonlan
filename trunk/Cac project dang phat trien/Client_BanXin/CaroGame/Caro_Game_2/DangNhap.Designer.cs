@@ -83,7 +83,7 @@
             this.txtIpsv.Name = "txtIpsv";
             this.txtIpsv.Size = new System.Drawing.Size(171, 20);
             this.txtIpsv.TabIndex = 4;
-            this.txtIpsv.Text = "192.168.0.101";
+            this.txtIpsv.Text = "192.168.1.101";
             // 
             // label2
             // 
