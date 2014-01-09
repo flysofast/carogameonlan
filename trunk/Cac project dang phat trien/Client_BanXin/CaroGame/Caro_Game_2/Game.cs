@@ -50,7 +50,7 @@ namespace Caro_Game_2
             // mặc định là đánh với humem
             humanVsComputerToolStripMenuItem.Checked = false;
             humanVsHumanToolStripMenuItem.Checked = true;
-
+            rtbTinnhan.Enabled = false;
             pb.Xoasukienclick(); //--sua--
 
             thrNhan = new Thread(NhanDuLieu);
@@ -77,9 +77,9 @@ namespace Caro_Game_2
             rtbWriteChat.Enabled = dangchoi;
             btnGui.Enabled = dangchoi;//Và các nút khác tương tự
             //pb.Enabled = dangchoi;
-            //if (dangchoi)
+            //if (!dangchoi)
             //    pb.Themsukienclick();
-            //else
+            ////else
             //    pb.Xoasukienclick();
             rtbTinnhan.Clear();
             btnBocuoc.Enabled = dangchoi;
