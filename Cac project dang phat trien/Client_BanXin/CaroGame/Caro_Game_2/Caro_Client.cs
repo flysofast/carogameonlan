@@ -65,6 +65,28 @@ namespace Caro_Game_2
         {
             Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:TC:/{1}</content>", doithu, lydo));
         }
+
+
+        public static void XinHoa(string doithu)
+        {
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:XH:/</content>", doithu));
+        }
+        public static void ChapNhanHoa(string doithu)
+        {
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:CN:/</content>", doithu));
+        }
+        public static void KoChapNhanHoa(string doithu)
+        {
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:KK:/</content>", doithu));
+        }
+
+        public static void BoCuoc(string doithu)
+        {
+            Gui(string.Format("/:MS:/<recipient>{0}</recipient><content>/:KK:/</content>", doithu));
+        }
+
+
+
         public static string NhanDuLieu()
         {
             try
@@ -78,6 +100,15 @@ namespace Caro_Game_2
                 Console.WriteLine("Error: " + ex);
             }
             return null;
+        }
+        public static string MaHoa(string rtf)
+        {
+            string a = rtf;
+            return a.Replace("\r\n", "$^");
+        }
+        public static string GiaiMa(string str)
+        {
+            return str.Replace("$^", "\r\n");
         }
         public static void NgatKetNoi()
         {

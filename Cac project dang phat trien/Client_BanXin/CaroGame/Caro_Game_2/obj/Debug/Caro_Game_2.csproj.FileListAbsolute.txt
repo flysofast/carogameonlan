@@ -47,3 +47,42 @@ D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Clien
 D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.NhanLoiMoi.resources
 D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
 D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe.config
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.exe
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.pdb
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.pdb
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csprojResolveAssemblyReference.cache
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Ban.resources
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.DangNhap.resources
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Game.resources
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.MoiChoi.resources
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.NhanLoiMoi.resources
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
+D:\TaiLieu\2013-2014\HKI\Caro\Cac project dang phat trien\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe.config
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.exe
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.pdb
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.pdb
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csprojResolveAssemblyReference.cache
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Ban.resources
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.DangNhap.resources
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Game.resources
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.MoiChoi.resources
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.NhanLoiMoi.resources
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
+C:\Users\Lac\Desktop\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe.config
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.exe
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\bin\Debug\Caro_Game_2.pdb
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csprojResolveAssemblyReference.cache
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Ban.resources
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.DangNhap.resources
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Game.resources
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.MoiChoi.resources
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.NhanLoiMoi.resources
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.Properties.Resources.resources
+D:\Rin\Visual Studio projects\GameCaro_LTM_SVN\Caro_Client\Client_BanXin\CaroGame\Caro_Game_2\obj\Debug\Caro_Game_2.csproj.GenerateResource.Cache

@@ -28,6 +28,7 @@ namespace Caro_Game_2
         private void btnGuiloimoi_Click(object sender, EventArgs e)
         {
             Caro_Client.GuiLoiMoi(tendoithu,tenminh,rtbNDLoimoi.Text);
+            this.Close();
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Caro_Game_2
 
         private void btnHuybo_Click(object sender, EventArgs e)
         {
+            Caro_Client.TuChoi(tendthu, "TuChoi");
             this.Close();
         }
 
@@ -27,6 +28,7 @@ namespace Caro_Game_2
         {
             //code xử lý đồng ý...
             Caro_Client.DongY(tenminh,tendthu);
+            MessageBox.Show("Bắt đầu chơi với " + tendthu);
             //Game gm = Parent as Game;
             //gm.dangchoi = true;
             //gm.doithu = tendthu;
