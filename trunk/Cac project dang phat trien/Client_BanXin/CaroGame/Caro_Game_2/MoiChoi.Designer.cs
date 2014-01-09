@@ -36,6 +36,7 @@
             // 
             // rtbNDLoimoi
             // 
+            this.rtbNDLoimoi.BackColor = System.Drawing.Color.AliceBlue;
             this.rtbNDLoimoi.Location = new System.Drawing.Point(31, 51);
             this.rtbNDLoimoi.Name = "rtbNDLoimoi";
             this.rtbNDLoimoi.Size = new System.Drawing.Size(286, 65);
@@ -44,12 +45,14 @@
             // 
             // btnGuiloimoi
             // 
+            this.btnGuiloimoi.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnGuiloimoi.ForeColor = System.Drawing.Color.White;
             this.btnGuiloimoi.Location = new System.Drawing.Point(136, 133);
             this.btnGuiloimoi.Name = "btnGuiloimoi";
             this.btnGuiloimoi.Size = new System.Drawing.Size(75, 30);
             this.btnGuiloimoi.TabIndex = 1;
             this.btnGuiloimoi.Text = "Gửi Đi";
-            this.btnGuiloimoi.UseVisualStyleBackColor = true;
+            this.btnGuiloimoi.UseVisualStyleBackColor = false;
             this.btnGuiloimoi.Click += new System.EventHandler(this.btnGuiloimoi_Click);
             // 
             // label1
@@ -74,13 +77,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(351, 175);
+            this.ControlBox = false;
             this.Controls.Add(this.lblTendoithu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuiloimoi);
             this.Controls.Add(this.rtbNDLoimoi);
             this.Name = "MoiChoi";
-            this.Text = "Mời chơi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mời bạn chơi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
