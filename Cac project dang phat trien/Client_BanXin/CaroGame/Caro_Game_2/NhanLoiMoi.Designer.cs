@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDongy = new System.Windows.Forms.Button();
             this.btnHuybo = new System.Windows.Forms.Button();
             this.rtbNoidungloimoi = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTendoithu = new System.Windows.Forms.Label();
+            this.timerchophanhoi = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnDongy
             // 
-            this.btnDongy.Location = new System.Drawing.Point(89, 148);
+            this.btnDongy.Location = new System.Drawing.Point(73, 148);
             this.btnDongy.Name = "btnDongy";
-            this.btnDongy.Size = new System.Drawing.Size(75, 30);
+            this.btnDongy.Size = new System.Drawing.Size(89, 30);
             this.btnDongy.TabIndex = 0;
             this.btnDongy.Text = "Đồng ý";
             this.btnDongy.UseVisualStyleBackColor = true;
@@ -50,7 +52,7 @@
             // 
             this.btnHuybo.Location = new System.Drawing.Point(200, 148);
             this.btnHuybo.Name = "btnHuybo";
-            this.btnHuybo.Size = new System.Drawing.Size(75, 30);
+            this.btnHuybo.Size = new System.Drawing.Size(89, 30);
             this.btnHuybo.TabIndex = 1;
             this.btnHuybo.Text = "Hủy Bỏ";
             this.btnHuybo.UseVisualStyleBackColor = true;
@@ -59,7 +61,7 @@
             // rtbNoidungloimoi
             // 
             this.rtbNoidungloimoi.Enabled = false;
-            this.rtbNoidungloimoi.Location = new System.Drawing.Point(26, 52);
+            this.rtbNoidungloimoi.Location = new System.Drawing.Point(26, 58);
             this.rtbNoidungloimoi.Name = "rtbNoidungloimoi";
             this.rtbNoidungloimoi.Size = new System.Drawing.Size(312, 71);
             this.rtbNoidungloimoi.TabIndex = 2;
@@ -68,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 33);
+            this.label1.Location = new System.Drawing.Point(26, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 3;
@@ -92,6 +94,11 @@
             this.lblTendoithu.TabIndex = 5;
             this.lblTendoithu.Text = "Tendthu";
             // 
+            // timerchophanhoi
+            // 
+            this.timerchophanhoi.Interval = 1000;
+            this.timerchophanhoi.Tick += new System.EventHandler(this.timerchophanhoi_Tick);
+            // 
             // NhanLoiMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +112,7 @@
             this.Controls.Add(this.btnDongy);
             this.Name = "NhanLoiMoi";
             this.Text = "Nhận lời mời";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanLoiMoi_FormClosing);
             this.Load += new System.EventHandler(this.NhanLoiMoi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,5 +127,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTendoithu;
+        private System.Windows.Forms.Timer timerchophanhoi;
     }
 }
