@@ -53,12 +53,12 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btnGui = new System.Windows.Forms.Button();
             this.rtbTinnhan = new System.Windows.Forms.RichTextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnXinhoa = new System.Windows.Forms.Button();
             this.btnThoatgame = new System.Windows.Forms.Button();
             this.btnBocuoc = new System.Windows.Forms.Button();
             this.btnRoibanchoi = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timerdemnguoc = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -353,6 +353,11 @@
             this.timer2.Interval = 400;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timerdemnguoc
+            // 
+            this.timerdemnguoc.Interval = 1000;
+            this.timerdemnguoc.Tick += new System.EventHandler(this.timerdemnguoc_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,7 +379,6 @@
             this.Controls.Add(this.listDsnguoidung);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -413,11 +417,11 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnGui;
         private System.Windows.Forms.RichTextBox rtbTinnhan;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnXinhoa;
         private System.Windows.Forms.Button btnThoatgame;
         private System.Windows.Forms.Button btnBocuoc;
         private System.Windows.Forms.Button btnRoibanchoi;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timerdemnguoc;
     }
 }

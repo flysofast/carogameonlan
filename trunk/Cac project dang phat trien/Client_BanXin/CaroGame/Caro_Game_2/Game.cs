@@ -146,7 +146,7 @@ namespace Caro_Game_2
                         if (lkResult == DialogResult.Yes)
                         {
                             Caro_Client.ChapNhanHoa(doithu);
-                            //Xử lý hòa trên form
+                            //xy ly hoa
                         }
                         else
                         {
@@ -171,7 +171,8 @@ namespace Caro_Game_2
                     if (str.Substring(0, 6) == "/:BC:/")
                     {
                         MessageBox.Show("Đối thủ đã bỏ cuộc");
-                        //Xử lý form khi bỏ cuộc
+                        dathang = 1;
+                        Thietlaptyso(tysotrai + 1, tysophai);
                         //Mình là người thắng
                     }
 
@@ -331,7 +332,7 @@ namespace Caro_Game_2
                 TaoBan();
                 pb.Enabled = true;
             }
-            timer1.Enabled = false;
+            timerdemnguoc.Enabled = false;
             lblTimeleft.Text = lblTimeright.Text = "30s";
             sogiay = 30;
         }
@@ -418,32 +419,13 @@ namespace Caro_Game_2
 
         //Đếm ngược thời gian chơi:
         int sogiay, aidanh;
-        private void timer1_Tick(object sender, EventArgs e) //--có thay đổi--
-        {
-            if (aidanh == 1)
-            {
-                if (sogiay >= 0)
-                {
-                    lblTimeleft.Text = Math.Abs(sogiay) + "s";
-                    sogiay--;
-                }
-                else
-                {
-                    Tudanhco();
-                }
-            }
-            else
-            {
-                lblTimeright.Text = Math.Abs(sogiay) + "s";
-                sogiay--;
-            }
-        }
 
         //Hàm chạy thời gian chơi:
         public void TimeStart(int b_aidanh)
         {
             aidanh = b_aidanh;
             sogiay = 30;
+            timerdemnguoc.Enabled = true;
         }
         //-----------------
 
@@ -504,6 +486,7 @@ namespace Caro_Game_2
         private void btnBocuoc_Click(object sender, EventArgs e)
         {
             Caro_Client.BoCuoc(doithu);
+            TaoBan();
         }
 
         private void btnRoibanchoi_Click(object sender, EventArgs e)
@@ -520,6 +503,27 @@ namespace Caro_Game_2
             {
                 TaoBan();
                 dathang = 0;
+            }
+        }
+
+        private void timerdemnguoc_Tick(object sender, EventArgs e)
+        {
+            if (aidanh == 1)
+            {
+                if (sogiay >= 0)
+                {
+                    lblTimeleft.Text = Math.Abs(sogiay) + "s";
+                    sogiay--;
+                }
+                else
+                {
+                    Tudanhco();
+                }
+            }
+            else
+            {
+                lblTimeright.Text = Math.Abs(sogiay) + "s";
+                sogiay--;
             }
         }
 
