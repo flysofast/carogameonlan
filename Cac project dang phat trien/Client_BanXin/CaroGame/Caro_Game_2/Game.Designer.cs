@@ -58,9 +58,12 @@
             this.btnBocuoc = new System.Windows.Forms.Button();
             this.btnRoibanchoi = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.timerdemnguoc = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -241,7 +244,6 @@
             // 
             // btnFontchat
             // 
-            this.btnFontchat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFontchat.Image = ((System.Drawing.Image)(resources.GetObject("btnFontchat.Image")));
             this.btnFontchat.Location = new System.Drawing.Point(695, 354);
             this.btnFontchat.Name = "btnFontchat";
@@ -353,6 +355,24 @@
             this.timer2.Interval = 400;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(11, 552);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(957, 18);
+            this.panel1.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tọa độ:";
+            // 
             // timerdemnguoc
             // 
             this.timerdemnguoc.Interval = 1000;
@@ -363,8 +383,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(979, 565);
+            this.ClientSize = new System.Drawing.Size(979, 572);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRoibanchoi);
             this.Controls.Add(this.btnBocuoc);
             this.Controls.Add(this.btnThoatgame);
@@ -388,6 +409,8 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,6 +445,8 @@
         private System.Windows.Forms.Button btnBocuoc;
         private System.Windows.Forms.Button btnRoibanchoi;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerdemnguoc;
     }
 }

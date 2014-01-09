@@ -29,6 +29,7 @@ namespace Caro_Game_2
         }
 
         Thread thrNhan;
+        public static Label lbtd = new Label();
         private void Game_Load(object sender, EventArgs e)
         {
             //Hiển thị
@@ -39,7 +40,7 @@ namespace Caro_Game_2
 
             //tạo diện tích cho form Game
             Width = 995;
-            Height = 610;
+            Height = 611;
 
             pb = new panelBan(18, 26, true, 2);
             pb.Parent = this;
@@ -58,6 +59,9 @@ namespace Caro_Game_2
             DangChoi();
             dathang = 0;
             timer2.Enabled = true;
+            lbtd.Parent = this.panel1;
+            lbtd.Location = new Point(50, 1);
+            lbtd.Size = new Size(100, 13);
         }
 
         //public delegate void SetBien();
@@ -506,6 +510,13 @@ namespace Caro_Game_2
             }
         }
 
+        
+        public static void GhiToaDo(int x,int y)
+        {
+            lbtd.Text = x.ToString() + " , " + y.ToString();
+        }
+
+
         private void timerdemnguoc_Tick(object sender, EventArgs e)
         {
             if (aidanh == 1)
@@ -526,7 +537,6 @@ namespace Caro_Game_2
                 sogiay--;
             }
         }
-
 
     }
 }
