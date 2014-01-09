@@ -493,16 +493,19 @@ namespace Caro_Game_2
 
         private void txtTimkiem_TextChanged(object sender, EventArgs e)
         {
-            if (listDsnguoidung.Items.Count <= 0)
+            if (dsnc.Length <= 0)
                 return;
             listDsnguoidung.Clear();
             for (int i = 0; i < dsnc.Length; i++)
             {
-                if (txtTimkiem.Text.Trim() == "")
-                    listDsnguoidung.Items.Add(dsnc[i]);
-                else
-                    if (dsnc[i].Contains(txtTimkiem.Text.Trim()))
+                if (dsnc[i] != ten)
+                {
+                    if (txtTimkiem.Text.Trim() == "")
                         listDsnguoidung.Items.Add(dsnc[i]);
+                    else
+                        if (dsnc[i].Contains(txtTimkiem.Text.Trim()))
+                            listDsnguoidung.Items.Add(dsnc[i]);
+                }
             }
         }
 
