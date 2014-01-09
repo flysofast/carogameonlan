@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoiChoi));
             this.rtbNDLoimoi = new System.Windows.Forms.RichTextBox();
             this.btnGuiloimoi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -98,6 +99,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuiloimoi);
             this.Controls.Add(this.rtbNDLoimoi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MoiChoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mời bạn chơi";
