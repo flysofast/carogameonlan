@@ -298,8 +298,8 @@ namespace Caro_Game_2
             pb.Themsukienclick();
             //--có sửa--
             lblTimeleft.Text = lblTimeright.Text = "30s";
-            TimeStart(1);
             sogiay = 30;
+            TimeStart(1);
         }
 
         //Ham tu danh
