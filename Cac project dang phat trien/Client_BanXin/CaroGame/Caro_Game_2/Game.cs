@@ -56,12 +56,17 @@ namespace Caro_Game_2
             thrNhan = new Thread(NhanDuLieu);
             thrNhan.IsBackground = true;
             thrNhan.Start();
+
             DangChoi();
             dathang = 0;
             timer2.Enabled = true;
             lbtd.Parent = this.panel1;
             lbtd.Location = new Point(50, 1);
             lbtd.Size = new Size(100, 13);
+            chodanh = 0;
+            sogiay = 30;
+            demnguoc = 0;
+            timerdemnguoc.Enabled = true;
         }
 
         //public delegate void SetBien();
@@ -71,11 +76,12 @@ namespace Caro_Game_2
             listDsnguoidung.Enabled = !dangchoi;
             rtbWriteChat.Enabled = dangchoi;
             btnGui.Enabled = dangchoi;//Và các nút khác tương tự
-            pb.Enabled = dangchoi;
+            //pb.Enabled = dangchoi;
             rtbTinnhan.Clear();
             btnBocuoc.Enabled = dangchoi;
             btnRoibanchoi.Enabled = dangchoi;
             btnXinhoa.Enabled = dangchoi;
+            groupBox1.Visible = dangchoi;
             //Và nhiều nút khác
         }
         public bool dangchoi = false;
@@ -150,7 +156,12 @@ namespace Caro_Game_2
                         if (lkResult == DialogResult.Yes)
                         {
                             Caro_Client.ChapNhanHoa(doithu);
-                            //xy ly hoa
+                            //xu ly hoa
+                            dathang = 1;
+                            chodanh = 1;
+                            demnguoc = 0;
+                            lblTimeleft.Text = lblTimeright.Text = "30s";
+                            sogiay = 30;
                         }
                         else
                         {
@@ -161,8 +172,11 @@ namespace Caro_Game_2
                     if (str.Substring(0, 6) == "/:CN:/")
                     {
                         MessageBox.Show("Đối thủ " + doithu + " đã chấp nhận hòa");
-                        //Xử lý trên form khi chấp nhận hòa
-                        //Mở cho đánh trước
+                        //Chấp nhận xin hòa
+                        dathang = 1;
+                        demnguoc = 0;
+                        lblTimeleft.Text = lblTimeright.Text = "30s";
+                        sogiay = 30;
                         continue;
                     }
 
@@ -174,9 +188,15 @@ namespace Caro_Game_2
 
                     if (str.Substring(0, 6) == "/:BC:/")
                     {
-                        MessageBox.Show("Đối thủ đã bỏ cuộc");
-                        dathang = 1;
+                        MessageBox.Show("Đối thủ đã bỏ cuộc - Bạn là người chiến thắng");
                         Thietlaptyso(tysotrai + 1, tysophai);
+                        dathang = 1;
+                        //pb.Themsukienclick();
+                        chodanh = 1;
+
+                        demnguoc = 0;
+                        lblTimeleft.Text = lblTimeright.Text = "30s";
+                        sogiay = 30;
                         //Mình là người thắng
                     }
 
@@ -187,9 +207,15 @@ namespace Caro_Game_2
                     }
                     if (str.Substring(0, 6) == "/:RB:/")
                     {
+                        MessageBox.Show("Đối thủ " + doithu + " đã thoát khỏi bàn");
                         dangchoi = false;
                         DangChoi();
                         doithu = "";
+                        Thietlaptyso(0, 0);
+                        dathang = 1;
+                        demnguoc = 0;
+                        lblTimeleft.Text = lblTimeright.Text = "30s";
+                        sogiay = 30;
                         continue;
                     }
 
@@ -329,14 +355,17 @@ namespace Caro_Game_2
             {
                 dathang = 1;
                 Thietlaptyso(tysotrai, tysophai + 1);
+                //pb.Xoasukienclick();
+                chodanh = 2;
             }
             else
             {
                 Thietlaptyso(tysotrai + 1, tysophai);
                 TaoBan();
-                pb.Enabled = true;
+                pb.Themsukienclick();
             }
-            timerdemnguoc.Enabled = false;
+            //timerdemnguoc.Enabled = false;
+            demnguoc = 0;
             lblTimeleft.Text = lblTimeright.Text = "30s";
             sogiay = 30;
         }
@@ -429,7 +458,8 @@ namespace Caro_Game_2
         {
             aidanh = b_aidanh;
             sogiay = 30;
-            timerdemnguoc.Enabled = true;
+            //timerdemnguoc.Enabled = true;
+            demnguoc = 1;
         }
         //-----------------
 
@@ -491,22 +521,44 @@ namespace Caro_Game_2
         {
             Caro_Client.BoCuoc(doithu);
             TaoBan();
+            Thietlaptyso(tysotrai, tysophai + 1);
+            pb.Xoasukienclick();
+            demnguoc = 0;
+            lblTimeleft.Text = lblTimeright.Text = "30s";
+            sogiay = 30;
         }
 
         private void btnRoibanchoi_Click(object sender, EventArgs e)
         {
+            //code gửi tin nhan roi ban choi
+            Caro_Client.RoiBanChoi(doithu);
             dangchoi = false;
             doithu = "";
             DangChoi();
+            Thietlaptyso(0, 0);
+            demnguoc = 0;
+            lblTimeleft.Text = lblTimeright.Text = "30s";
+            sogiay = 30;
         }
 
-        public static int dathang = 0;
+        public int dathang = 0;
+        public int chodanh = 0;
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (dathang == 1)
             {
                 TaoBan();
                 dathang = 0;
+            }
+            if (chodanh == 1)
+            {
+                pb.Themsukienclick();
+                chodanh = 0;
+            }
+            if (chodanh == 2)
+            {
+                pb.Xoasukienclick();
+                chodanh = 0;
             }
         }
 
@@ -516,25 +568,28 @@ namespace Caro_Game_2
             lbtd.Text = x.ToString() + " , " + y.ToString();
         }
 
-
+        int demnguoc = 0;
         private void timerdemnguoc_Tick(object sender, EventArgs e)
         {
-            if (aidanh == 1)
+            if (demnguoc == 1)
             {
-                if (sogiay >= 0)
+                if (aidanh == 1)
                 {
-                    lblTimeleft.Text = Math.Abs(sogiay) + "s";
-                    sogiay--;
+                    if (sogiay >= 0)
+                    {
+                        lblTimeleft.Text = Math.Abs(sogiay) + "s";
+                        sogiay--;
+                    }
+                    else
+                    {
+                        Tudanhco();
+                    }
                 }
                 else
                 {
-                    Tudanhco();
+                    lblTimeright.Text = Math.Abs(sogiay) + "s";
+                    sogiay--;
                 }
-            }
-            else
-            {
-                lblTimeright.Text = Math.Abs(sogiay) + "s";
-                sogiay--;
             }
         }
 
