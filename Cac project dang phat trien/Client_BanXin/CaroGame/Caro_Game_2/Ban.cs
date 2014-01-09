@@ -313,5 +313,12 @@ namespace Caro_Game_2
             }
             return td;
         }
+
+        private void Ban_MouseMove(object sender, MouseEventArgs e)
+        {
+            int x = e.X / cellSize;// lấy số dòng
+            int y = e.Y / cellSize; // lấy số cột
+            Game.GhiToaDo(x,y);
+        }
     }
 }

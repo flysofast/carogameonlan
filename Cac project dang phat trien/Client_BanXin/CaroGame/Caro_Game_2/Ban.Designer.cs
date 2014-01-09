@@ -37,6 +37,7 @@
             this.Name = "Ban";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Ban_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Ban_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Ban_MouseMove);
             this.ResumeLayout(false);
 
         }
